@@ -1,0 +1,37 @@
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.close-button::before,
+.close-button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 2px;
+    background-color: #fff;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-button::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* 鼠标悬停时的样式 */
+.close-button:hover {
+    background-color: #aaa;
+}
+
+.close-button:hover::before,
+.close-button:hover::after {
+    background-color: #fff;
+}

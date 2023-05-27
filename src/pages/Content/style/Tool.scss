@@ -1,0 +1,94 @@
+/* Dropdowns and Input container */
+.dropdowns-and-input-container {
+  position: fixed;
+  left: 50%;
+  margin-left: -255px;
+  bottom: 90px;
+  z-index: 1000;
+  width: 560px;
+  // padding: 15px 0px;
+  // background: #333;
+  // flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+
+  select,
+  input {
+    height: 35px;
+  }
+
+  .prompts-tips {
+    display: inline-block;
+    background-color: #d9d9e3;
+    border-radius: 4px;
+    color: #333;
+    padding: 4px 8px;
+    max-width: 560px;
+    // margin-left: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+}
+
+.dropdown-container-wrap {
+  display: flex;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.dropdown-container-wrap div {
+  flex-direction: 1;
+}
+
+/* Dropdown container */
+.dropdown-container {
+  // float: left;
+  // display: flex;
+  // align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Dropdown label */
+.dropdown-label {
+  margin-right: 10px;
+}
+
+/* Dropdown select */
+.dropdown {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 8px;
+  font-size: 14px;
+}
+
+/* Input container */
+.input-container {
+  width: 800px;
+  align-items: center;
+}
+
+/* Input label */
+.input-label {
+  margin-left: 20px;
+  margin-right: 5px;
+}
+
+/* Input */
+.input {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  width: 430px;
+}
+
+select {
+  padding: 10px;
+}
+
+
+
+//上面是一行内容的时候，当有两行的内容时候
