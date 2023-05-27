@@ -6,3 +6,5 @@ function injectScript(file, node) {
     th.appendChild(s);
 }
 injectScript(chrome.runtime.getURL('default.bundle.js'), 'body');
+
+

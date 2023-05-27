@@ -2,7 +2,39 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import './style/App.scss'
+import "./utils/history.js";
+
 import App from './App.js';
+
+
+// console.log("运行一次");
+
+// var _wr = function (type) {
+//     var orig = history[type];
+//     return function () {
+//         var rv = orig.apply(this, arguments);
+//         var e = new Event(type);
+//         e.arguments = arguments;
+//         window.dispatchEvent(e);
+//         return rv;
+//     };
+// };
+// history.pushState = _wr('pushState');
+// history.replaceState = _wr('replaceState');
+
+window.addEventListener('replaceState', function (e) {
+    setTimeout(judgeUrl, 100);
+});
+window.addEventListener('pushState', function (e) {
+    setTimeout(judgeUrl, 100);
+});
+
+//根据url判断当前状态
+function judgeUrl() {
+    if (location.href.indexOf("?model=") == -1) return;
+    init();
+}
+
 
 /*
 * 判断页面，几种类型
@@ -13,13 +45,34 @@ import App from './App.js';
 */
 function getElements() {
 
-
     var mainEle = document.querySelector("main.relative.h-full.w-full");  //右边整体内容
     var chatGPTInforEle = document.querySelector("div.text-gray-800");  // 右边chatGPT内容（包括标题、Examples、Capabilities和Limitations)
     var contentEle = mainEle.querySelector("div.flex.flex-col"); // 右边容器用于放App
     var chatGPTBtmEle = mainEle.querySelector(".flex-shrink-0"); // 右边底部区域
     var scrollEle = document.querySelector(".react-scroll-to-bottom--css-zgqss-1n7m0yu"); //右边滚动区域
     var groupEle = mainEle.querySelector("div.group.w-full.text-gray-800");
+
+    // 容错判断
+    if (chatGPTInforEle == null || contentEle == null || chatGPTBtmEle == null || mainEle == null) {
+
+        var h1Eles = document.querySelectorAll("h1");
+        var h1Ele = null;
+
+        // 获取以chatGPT为标题元素
+        for (var item of h1Eles) {
+            if (item.innerHTML.toLocaleLowerCase() == "chatgpt") {
+                h1Ele = item;
+            }
+        }
+
+        if (h1Ele != null) {
+            chatGPTInforEle = h1Ele.parentNode;
+            contentEle = chatGPTInforEle.parentNode;
+            mainEle = document.querySelector("main");
+        }
+    }
+
+
     return {
         mainEle: mainEle,
         chatGPTInforEle: chatGPTInforEle,
@@ -44,9 +97,9 @@ function judgePage() {
     }
 }
 
-function createTpl(contentEle, fn) {
+function createTpl(fn) {
 
-    var { chatGPTBtmEle } = getElements();
+    var { chatGPTBtmEle, contentEle } = getElements();
     var appEle = document.createElement("div");
     appEle.setAttribute("id", "chatGTP_prompts");
     // contentEle.appendChild(appEle);
@@ -101,10 +154,7 @@ function init() {
 
     var callback = function (mutationList, observer) {
 
-        console.log("callback!");
-
         var { mainEle, chatGPTInforEle, contentEle } = getElements();
-
 
         if (mainEle == null) return;
         //  chatGPT对话框
@@ -129,14 +179,14 @@ function init() {
             hideChatGPT();
             isTplCreating = true;
             // 创建卡片dom节点
-            createTpl(contentEle, () => {
+            createTpl(() => {
                 isTplCreating = false;
                 isTplCreated = true;
 
-                setTimeout(() => {
-                    var { scrollEle } = getElements();
-                    scrollEle != null && scrollEle.scrollTo(0, 0);
-                }, 200);
+                // setTimeout(() => {
+                //     var { scrollEle } = getElements();
+                //     scrollEle != null && scrollEle.scrollTo(0, 0);
+                // }, 200);
                 // observer && observer.disconnect();
             });
 
@@ -146,7 +196,6 @@ function init() {
         subtree: true,
         childList: true
     }
-
     // var rootEle = document.getElementById("__next");
 
     var { mainEle } = getElements();
@@ -155,40 +204,5 @@ function init() {
         Observer.observe(mainEle, config);
     }
     callback();
-
-    // try {
-    //     //chatGPT底部元素
-
-    //     // console.log("setInterval");
-
-    //     if (contentEle != null && chatGPTInforEle != null && !isAppExist) {
-    //         clearInterval(handler);
-
-    //         var chatGPTBtmEle = mainEle.querySelector(".w-full.h-32.flex-shrink-0");
-    //         chatGPTBtmEle.style.height = "1px";
-
-    //         // 隐藏chatGPTInforEle内容
-    //         chatGPTInforEle.style.height = "1px";
-    //         chatGPTInforEle.style.overflow = "hidden";
-
-    //         // 创建卡片dom节点
-    //         var appEle = document.createElement("div");
-    //         appEle.setAttribute("id", "chatGTP_prompts");
-    //         contentEle.appendChild(appEle);
-
-    //         ReactDOM.render(
-    //             <App onDel={() => {
-    //                 isAppExist = false;
-    //             }} />,
-    //             appEle,
-    //             () => {
-    //                 isAppExist = true;
-    //             }
-    //         )
-    //     }
-    // } catch (e) {
-
-    // }
-    // }, 100);
 }
 init();

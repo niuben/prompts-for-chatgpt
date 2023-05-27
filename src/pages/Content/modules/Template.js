@@ -17,8 +17,8 @@ import { throttled } from "../utils/utils.js";
 
 // import Toast from "./Toast";
 
-const Template = ({ setPrompt }) => {
-    const [id, setId] = useState(null);
+const Template = ({ currentPrompt, setPrompt }) => {
+    // const [id, setId] = useState(null);
     const [page, setPage] = useState(0);
     const [pageLimite, setPageLimite] = useState(16);
     const [topic, setTopic] = useState("全部");
@@ -78,6 +78,11 @@ const Template = ({ setPrompt }) => {
         return null
     };
 
+    var resetPrompt = function () {
+        // setId(null);
+        setPrompt(null)
+    }
+
     //截取文字
     var substr = function (str, length) {
         if (typeof str != "string") {
@@ -86,7 +91,7 @@ const Template = ({ setPrompt }) => {
         return str.substr(0, length);
     }
 
-    console.log("getPrompt", getPrompt(id));
+    // console.log("getPrompt", getPrompt(id));
 
     var totalData = getTotalData();
     var currentData = getCurrentData();
@@ -108,15 +113,14 @@ const Template = ({ setPrompt }) => {
             <div className="cardsWrap">
                 <div className="cardsWrapInner">
                     {currentData.map((prompt) => (
-                        <div className={"card" + (prompt.id == id ? " active" : "")} key={prompt.id} onClick={() => {
+                        <div className={"card" + (currentPrompt != null && prompt.id == currentPrompt.id ? " active" : "")} key={prompt.id} onClick={() => {
 
                             //当id == 当前prompt.id，证明再次点击已选的prompt, 这是设置取消;
-                            if (id != prompt.id) {
-                                setId(prompt.id);
+                            if (currentPrompt == null || currentPrompt.id != prompt.id) {
+                                // setId(prompt.id);
                                 setPrompt(prompt);
                             } else {
-                                setId(null);
-                                setPrompt(null)
+                                resetPrompt();
                             }
                         }}>
                             <div className="cardContent">

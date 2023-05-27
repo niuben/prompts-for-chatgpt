@@ -63,7 +63,8 @@ fetchHook((url, options) => {
 
 const App = ({ onDel, onHide }) => {
 
-    var [currentPrompt, setPrompt] = useState(null);
+    var [currentPrompt, setPrompt] = useState({ id: -1 });
+
     // 是否移除prompts模板，模板只移除一次;
 
     //设置输入框placeholder
@@ -90,9 +91,10 @@ const App = ({ onDel, onHide }) => {
         <div className="outerWrap">
 
             <div class="close-button" href="javascript:void(0)" onClick={() => {
+
                 onHide && onHide();
             }}></div>
-            <Template setPrompt={(prompt) => {
+            <Template currentPrompt={currentPrompt} setPrompt={(prompt) => {
                 setPrompt(prompt);
                 appPrompt = prompt;
                 setPlaceHolder(prompt);

@@ -10,7 +10,6 @@ const Pagination = ({ itemsPerPage, currentPage, totalItems, paginate }) => {
     pageNumbers.push(i);
   }
 
-
   const handleClick = (number) => {
     setActivePage(number);
     paginate(number);
@@ -33,8 +32,9 @@ const Pagination = ({ itemsPerPage, currentPage, totalItems, paginate }) => {
   return (
     <nav>
       <ul className="pagination">
-        <li>{currentPage * itemsPerPage + "/" + totalItems}</li>
-        <li className={`page-item ${activePage === 1 ? 'disabled' : ''}`}>
+        {/* <li>{currentPage * itemsPerPage + "/" + totalItems}</li> */}
+        <li>{(currentPage + 1) + "/" + (pageNumbers.length + 1)}</li>
+        <li className={`page-item ${activePage === 0 ? 'disabled' : ''}`}>
           <span
             onClick={handlePreviousClick}
             href="!#"
