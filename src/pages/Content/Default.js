@@ -6,22 +6,6 @@ import "./utils/history.js";
 
 import App from './App.js';
 
-
-// console.log("运行一次");
-
-// var _wr = function (type) {
-//     var orig = history[type];
-//     return function () {
-//         var rv = orig.apply(this, arguments);
-//         var e = new Event(type);
-//         e.arguments = arguments;
-//         window.dispatchEvent(e);
-//         return rv;
-//     };
-// };
-// history.pushState = _wr('pushState');
-// history.replaceState = _wr('replaceState');
-
 window.addEventListener('replaceState', function (e) {
     setTimeout(judgeUrl, 100);
 });
