@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, createElement } from 'react'
 
 // import data from "./data/data.js"
 
@@ -13,9 +13,11 @@ import topicOptions from "../data/topic.js";
 // import keyword from "../data/keyword.js";
 
 import { toSelect } from '../utils/toSelect.js';
-import { throttled } from "../utils/utils.js";
+import { throttled as createThrottled } from "../utils/utils.js";
 
 // import Toast from "./Toast";
+var handle;
+
 
 const Template = ({ currentPrompt, setPrompt }) => {
     // const [id, setId] = useState(null);
@@ -26,6 +28,8 @@ const Template = ({ currentPrompt, setPrompt }) => {
 
     // const [isToast, setToast] = useState(false);
     // const mainInnerRef = useRef();
+
+
 
     var options = toSelect(topicOptions, {
         "key": "name",
@@ -107,10 +111,18 @@ const Template = ({ currentPrompt, setPrompt }) => {
                 setTopic(value);
                 setPage(0);
             }} />
-            {/* <input placeholder='搜索' onChange={(e) => {
-                setQuery(e.target.value);
-            }} /> */}
-            <div className="cardsWrap">
+            <input placeholder='搜索' className='right mr20' onChange={(e) => {
+                var val = e.target.value;
+                if (handle != undefined) {
+                    clearTimeout(handle);
+                    handle = undefined;
+                }
+                handle = setTimeout(() => {
+                    setQuery(val);
+                    handle == undefined;
+                }, 150);
+            }} />
+            <div className="cardsWrap clear">
                 <div className="cardsWrapInner">
                     {currentData.map((prompt) => (
                         <div className={"card" + (currentPrompt != null && prompt.id == currentPrompt.id ? " active" : "")} key={prompt.id} onClick={() => {

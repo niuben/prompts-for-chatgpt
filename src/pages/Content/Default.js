@@ -27,10 +27,17 @@ function judgeUrl() {
     2.1 刚提交对话框 
     2.2 打开页面对话框）
 */
+
+/*
+* 缓存机制: 当第1次获取dom节点时，缓存起来
+* 全局变量，第一次有chatGPT标题时，缓存起来;
+*/
+var h1Eles
+
 function getElements() {
 
     var mainEle = document.querySelector("main.relative.h-full.w-full");  //右边整体内容
-    var chatGPTInforEle = document.querySelector("div.text-gray-800");  // 右边chatGPT内容（包括标题、Examples、Capabilities和Limitations)
+    var chatGPTInforEle = document.querySelector("div.text-gray-800111");  // 右边chatGPT内容（包括标题、Examples、Capabilities和Limitations)
     var contentEle = mainEle.querySelector("div.flex.flex-col"); // 右边容器用于放App
     var chatGPTBtmEle = mainEle.querySelector(".flex-shrink-0"); // 右边底部区域
     var scrollEle = document.querySelector(".react-scroll-to-bottom--css-zgqss-1n7m0yu"); //右边滚动区域
@@ -39,13 +46,18 @@ function getElements() {
     // 容错判断
     if (chatGPTInforEle == null || contentEle == null || chatGPTBtmEle == null || mainEle == null) {
 
-        var h1Eles = document.querySelectorAll("h1");
+
+        if (h1Eles == undefined && document.querySelectorAll("h1").length != 0) {
+            h1Eles = document.querySelectorAll("h1");
+        }
         var h1Ele = null;
 
         // 获取以chatGPT为标题元素
-        for (var item of h1Eles) {
-            if (item.innerHTML.toLocaleLowerCase() == "chatgpt") {
-                h1Ele = item;
+        if (h1Eles != undefined) {
+            for (var item of h1Eles) {
+                if (item.innerHTML.toLocaleLowerCase() == "chatgpt") {
+                    h1Ele = item;
+                }
             }
         }
 

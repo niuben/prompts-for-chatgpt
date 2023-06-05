@@ -16,7 +16,7 @@ export default function Select({ options, title, defaultValue, onChange }) {
     const [dropdownValue, setDropdownValue] = useState(defaultValue);
 
     return (
-        <div className="dropdown-container">
+        <div className="dropdown-container left">
             <label className="dropdown-label">{title}:</label>
             <select className="dropdown" value={dropdownValue} onChange={(e) => {
                 var val = e.value;

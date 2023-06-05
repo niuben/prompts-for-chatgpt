@@ -5,6 +5,8 @@ import './style/App.scss'
 import './style/pagination.scss'
 import './style/Close.scss'
 import './style/Icon.scss'
+import "./style/Input.scss"
+
 
 import Template from './modules/Template'
 import fetchHook from './utils/fetch-hook'
