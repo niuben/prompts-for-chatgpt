@@ -37,7 +37,7 @@ var h1Eles
 function getElements() {
 
     var mainEle = document.querySelector("main.relative.h-full.w-full");  //右边整体内容
-    var chatGPTInforEle = document.querySelector("div.text-gray-800111");  // 右边chatGPT内容（包括标题、Examples、Capabilities和Limitations)
+    var chatGPTInforEle = document.querySelector("div.text-gray-800");  // 右边chatGPT内容（包括标题、Examples、Capabilities和Limitations)
     var contentEle = mainEle.querySelector("div.flex.flex-col"); // 右边容器用于放App
     var chatGPTBtmEle = mainEle.querySelector(".flex-shrink-0"); // 右边底部区域
     var scrollEle = document.querySelector(".react-scroll-to-bottom--css-zgqss-1n7m0yu"); //右边滚动区域

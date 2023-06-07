@@ -7,21 +7,39 @@ import './style/Close.scss'
 import './style/Icon.scss'
 import "./style/Input.scss"
 
-
 import Template from './modules/Template'
 import fetchHook from './utils/fetch-hook'
+
+import { getFromLocalStorage, saveToLocalStorage } from "./utils/localStorage";
+import { PROMPTS_ID } from "./utils/constant";
+import { insertNumberToFront } from "./utils/utils";
+
 
 var appPrompt = null;
 fetchHook((url, options) => {
 
     console.log("fetchHook!!!!");
 
+    // 判断是否对话
     if (url.indexOf("conversation") == -1) {
         return options;
     }
 
+    // 判断是否请求对话
     if (!options.body) {
         return options;
+    }
+
+    console.log("conversation");
+
+    /*
+    * 提交prompt的id存到storage中;
+    */
+
+    if (appPrompt != null) {
+        var promptsID = getFromLocalStorage(PROMPTS_ID);
+        promptsID = promptsID == null ? [appPrompt.id] : insertNumberToFront(appPrompt.id, promptsID);
+        saveToLocalStorage(PROMPTS_ID, promptsID);
     }
 
     // if (isRemoveTpl == false) {
@@ -93,6 +111,9 @@ const App = ({ onDel, onHide }) => {
         <div className="outerWrap">
 
             <div class="close-button" href="javascript:void(0)" onClick={() => {
+                setPrompt(null);
+                appPrompt = null;
+                setPlaceHolder(null);
 
                 onHide && onHide();
             }}></div>

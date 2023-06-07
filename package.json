@@ -1,6 +1,6 @@
 {
   "name": "ChatGPT Prompts 提示词",
-  "version": "0.4.0",
+  "version": "0.6.0",
   "description": "A chrome extension boilerplate built with React 18, Webpack 5, and Webpack Dev Server 4",
   "license": "MIT",
   "repository": {

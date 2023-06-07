@@ -13,7 +13,9 @@ import topicOptions from "../data/topic.js";
 // import keyword from "../data/keyword.js";
 
 import { toSelect } from '../utils/toSelect.js';
-import { throttled as createThrottled } from "../utils/utils.js";
+import { throttled as createThrottled, rangeObjectsById } from "../utils/utils.js";
+import { getFromLocalStorage } from "../utils/localStorage";
+import { PROMPTS_ID } from "../utils/constant";
 
 // import Toast from "./Toast";
 var handle;
@@ -37,12 +39,21 @@ const Template = ({ currentPrompt, setPrompt }) => {
     });
 
     var getTotalData = function () {
-        var topicData = data;
 
+        // 将使用过模板放在最前面
+        var prompts_id = getFromLocalStorage(PROMPTS_ID)
+        if (prompts_id == null) prompts_id = [];
+        var rangeData = rangeObjectsById(prompts_id, data, (item) => {
+            item.isUsed = true;
+            return item;
+        });
+
+
+        var topicData = rangeData;
         // 获取当前分类数据
         if (topic != "全部") {
             topicData = [];
-            data.map((item) => {
+            rangeData.map((item) => {
                 if (item.topic == topic) {
                     topicData.push(item);
                 }
@@ -125,7 +136,12 @@ const Template = ({ currentPrompt, setPrompt }) => {
             <div className="cardsWrap clear">
                 <div className="cardsWrapInner">
                     {currentData.map((prompt) => (
-                        <div className={"card" + (currentPrompt != null && prompt.id == currentPrompt.id ? " active" : "")} key={prompt.id} onClick={() => {
+                        <div className={
+                            "card" +
+                            (currentPrompt != null && prompt.id == currentPrompt.id ? " active" : "") +
+                            " " +
+                            (prompt.isUsed == true ? "isUsed" : "")
+                        } key={prompt.id} onClick={() => {
 
                             //当id == 当前prompt.id，证明再次点击已选的prompt, 这是设置取消;
                             if (currentPrompt == null || currentPrompt.id != prompt.id) {
@@ -140,6 +156,10 @@ const Template = ({ currentPrompt, setPrompt }) => {
                                 <p>
                                     <span className='icon icon_topic'>{prompt.topic}</span>
                                     <span className='icon icon_author'>{[prompt.author]}</span>
+                                    {
+                                        prompt.isUsed &&
+                                        <span className='icon icon_pin'>已使用</span>
+                                    }
                                 </p>
                                 {/* <p>{keyword[prompt.topic]}</p> */}
                                 {/* <p></p> */}
