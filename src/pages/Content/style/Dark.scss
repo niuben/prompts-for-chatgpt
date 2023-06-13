@@ -1,0 +1,63 @@
+/*
+* 增加深色模式 2023/6/12
+*/
+
+@media (prefers-color-scheme: dark) {
+
+    /*
+        卡片样式
+        修改背景颜色
+        字体颜色
+    */
+    .cardsWrap {
+        .card {
+            background-color: rgb(47, 47, 51);
+        }
+    }
+
+    /*
+    * 卡片悬停后样式
+    */
+    .cardsWrap .card:hover,
+    .cardsWrap .card.active {
+        background-color: rgb(3, 3, 3);
+    }
+
+    /* 下拉框样式  */
+    .dropdown {
+        background-color: rgba(48, 48, 51, 1);
+        border: 1px solid rgba(76, 76, 76, 1);
+    }
+
+    /*
+    *  输入框样式
+    */
+    input {
+        background-color: rgba(48, 48, 51, 1);
+        border: 1px solid rgba(76, 76, 76, 1);
+    }
+
+    /*
+    * 翻页样式
+    */
+    .pagination {
+        color: #fff;
+    }
+
+    .page-link {
+        background-color: rgba(44, 44, 46, 1);
+        color: #fff;
+    }
+
+    .icon_author {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAnVJREFUWEftlk2IzlEUxn8PiQ0LST5WxEaTjzTlY4EUKbGRJsKGmYZSFKUsZha+QmwI2ZCVlEJNKQ3lOzRmYecjalCSkLLQo9NcNemd9973facm5dRd/e//PL977rnnHDHMpmHW598EsN0ELE7rF3AHuC3pTa0RrSkCtkcBJ4AtQG9aI4D5ae2XdKAWiGIA2wuAB8BVYI+klwOFbK8AjgKzgYWSHpaA1ALwGdgoqauaY9uHgVZJ44cMwPZpYKSkthKnti8DnyRtz+0vioDtt0CLpPs5h/Hd9iLgvKRZuf1ZANtzgcfAWEk/cw4TwGjgGzBB0tdq/5QA7IyslxSZXmy2nwJtkp40CrA6hXNSsXr/NXwAmiW9axRgMtAHzJEUbz9rtuMpdkmamtucvYJ0p/H2eyR15hym/ceAmZLW5vaXAmwGLgBTJL3P1IG4suvAPEk9QwKQTnUO2AZ0Suqo5Nj2RWATsEvSyZx4fC+KwB9Hto8Ae4GbQGT5cyB6QTOwHBiX6sWjEvF6AKYD+4CtAwQ+JpBI0EOSomQXW1EEUvvdDWwAosyGWJy+V1IA1G1ZgFRWIwENtEu6VaJmuxvYIelF3XXA9irgEnBP0poS4QH5Eom6DlhfDWLQCNiO0htl9Iyk9lrEB0AcBJYAKyV9r+SjGsBZoElSjF51W2rNXyS1FgOk09+NmU/Ss7rV+3tCvJyI5NJKpbxiBGwfByZKiqLSsNm+AnRLOvW3s8EAYsqNZhLjVcNmuyW15mWlAD9S9t5oWL3/GmIyuiZpRhbA9jTgFTBd0ushAogBtU/SmCxAbLDdMVjDqRdoMJ/ZSlivYOl//wF+AwoX7CEdyxUDAAAAAElFTkSuQmCC);
+    }
+
+    .icon_topic {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAkhJREFUWEfFlz2vDVEUhp+3U3J9JRQSritURMKthJJCISHxLyhEoUChEAX/QkKiUFBeUSERKuIzUZD4Vupe2Sd7JjP77jOzZ46bs8ubtWY9c/da65kj5nw05/r0AtjeHSAlvRsCW5qXBbB9GLgELAObY+HvwBPgmqSnOZgxeasAbF8GrgB3gevAx1hsJ3AROA1clRRi6jM2rwVgexfwPlegqtQotCjpQ/j72LzJ1SZvcQ/4JOl8133bvgnskHQqAozKywH8AE5IetYDcAh4IGlTBBiV1wKwvRd4BWyU9KsHYAH4CeyLcYPzJL1OAcK4vQUWJP3uGznbBo7FuBVJJSO9AQgvt1SNddoD34Djkp6vEcBB4KGkLdXzU4D7wF9JZ9YI4A6wTtLJaQBhAYVls2rOU6ChV9AY3+XmIutaRLeA22Ev5JoyAuyJYG9yPWA7NOsicBY4l3uxaas4LKQbwJEwFVOu45GkSRPaXgGOTokL0/IYuFAtrmZcSeeG8dyaPPyPpJfJEtsPrE/ivlbjNq2nSgDCeG5PHvBFUhjZ+theArYlcZ/7LDrEhulLlF5Bp0WLbJhbTLEJD0SqF1OaMCyeTosOtmH1b5hhDGuL5mRUZLXY+WNWccuiOYAiq80A0LJoKqNiG84AUFt0Jhvarq0We6LIos28mWxou2U120UWTfNyPVBkQ9stq9kelZcD6LVhzmrxc7zTojPZMN5zp9UaBWqLluQNsWGn1eJk5Cz6X2wYfppNPiJLT/zI7c3rtWFpwbFxcwf4B3RAnjAgk7UJAAAAAElFTkSuQmCC);
+    }
+
+    .icon_pin {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAmJJREFUWEftlk2IjWEYhq97IVkoFlaW2JCNZGElCUWjJqOMmIXU1BhR/pKfMTWLmVIINRvJ34gsECk/scCKjciGpZLFLISFxa1H76nTcc73N1/NZt7V952e97mv73mf+3mPmOaladZnBqC2CtheKulj2SOtBSDEgdvAhKSRMhB1ARwCxpLwEUmN51yWugBmpwp0JcUDks7mqsPUXWB7CXALWAHcBHqT8F5JF/MgplQB22uT+ALggqRB2z2pGqHdL2k8C6IygO0+4EpKPizpVEOoBWK3pMudICoB2D4BDKek+yWdaxVogeiTdLUdRC6A7UHgWXjc9lzgDLAnJdsl6Vqnr7N9o6kneiVNtMZmAtiOhookH4BtSXwj8CveJT3MED8PBPxnYFGKiz13mvcUqUAMlmMJYhnwNYm/yhA/CZwGfgBrgJXAZKt47M8FiCDbcd5x7v8qkTVybQ+EIxLcFkn3a3GB7VHgMPAO6JH0pU3jdQN30+8Dki7VOgdsR7fvA14D3ZK+NVlvFfAYmA+MSDqeJ174CJpEtgLrkwueA12SftpeCLwAFgPjkvqLiJcCSDde9EBMupj5O4FHkjbZjoZcHeWXFJCFV9EmnAW8BZY37JRsGWJhq4B6mXrje2H1Ei64DuwAPiUXvE/ueABsLuKOyqPYdsPT99IX/mlOZvsJsK4qRN4k3J6u2FFJRzMGT3T/BmBIUgygwqsjgO2YXpH4oKTGrdcxse0QHyqsnALbAtieB8Q/mrDUm7JJy8R3AoiufippskyyKrH/AdieI+l3lWRV9hSaA1USF90zAzDtFfgLrzLaId8+a3gAAAAASUVORK5CYII=)
+    }
+}

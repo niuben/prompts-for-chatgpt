@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import './style/App.scss'
+import './style/App.scss';
 import "./utils/history.js";
 
 import App from './App.js';
+import './style/Dark.scss';
 
 window.addEventListener('replaceState', function (e) {
     setTimeout(judgeUrl, 100);
