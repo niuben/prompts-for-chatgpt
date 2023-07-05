@@ -49,6 +49,29 @@
         color: #fff;
     }
 
+    //关闭按钮 
+    .close-button {
+        background-color: rgba(48, 48, 51, 1);
+        border: none;
+    }
+
+    .close-button:hover {
+        background-color: rgba(70, 70, 74, 1);
+    }
+
+    .close-button::before,
+    .close-button::after {
+        background-color: #fff;
+    }
+
+    .close-button:hover::before,
+    .close-button:hover::after {
+        background-color: #fff;
+    }
+
+    /*
+    * 图标类
+    */
     .icon_author {
         background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAnVJREFUWEftlk2IzlEUxn8PiQ0LST5WxEaTjzTlY4EUKbGRJsKGmYZSFKUsZha+QmwI2ZCVlEJNKQ3lOzRmYecjalCSkLLQo9NcNemd9973facm5dRd/e//PL977rnnHDHMpmHW598EsN0ELE7rF3AHuC3pTa0RrSkCtkcBJ4AtQG9aI4D5ae2XdKAWiGIA2wuAB8BVYI+klwOFbK8AjgKzgYWSHpaA1ALwGdgoqauaY9uHgVZJ44cMwPZpYKSkthKnti8DnyRtz+0vioDtt0CLpPs5h/Hd9iLgvKRZuf1ZANtzgcfAWEk/cw4TwGjgGzBB0tdq/5QA7IyslxSZXmy2nwJtkp40CrA6hXNSsXr/NXwAmiW9axRgMtAHzJEUbz9rtuMpdkmamtucvYJ0p/H2eyR15hym/ceAmZLW5vaXAmwGLgBTJL3P1IG4suvAPEk9QwKQTnUO2AZ0Suqo5Nj2RWATsEvSyZx4fC+KwB9Hto8Ae4GbQGT5cyB6QTOwHBiX6sWjEvF6AKYD+4CtAwQ+JpBI0EOSomQXW1EEUvvdDWwAosyGWJy+V1IA1G1ZgFRWIwENtEu6VaJmuxvYIelF3XXA9irgEnBP0poS4QH5Eom6DlhfDWLQCNiO0htl9Iyk9lrEB0AcBJYAKyV9r+SjGsBZoElSjF51W2rNXyS1FgOk09+NmU/Ss7rV+3tCvJyI5NJKpbxiBGwfByZKiqLSsNm+AnRLOvW3s8EAYsqNZhLjVcNmuyW15mWlAD9S9t5oWL3/GmIyuiZpRhbA9jTgFTBd0ushAogBtU/SmCxAbLDdMVjDqRdoMJ/ZSlivYOl//wF+AwoX7CEdyxUDAAAAAElFTkSuQmCC);
     }

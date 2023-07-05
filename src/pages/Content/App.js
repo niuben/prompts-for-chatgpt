@@ -7,12 +7,15 @@ import './style/Close.scss'
 import './style/Icon.scss'
 import "./style/Input.scss"
 
+
 import Template from './modules/Template'
 import fetchHook from './utils/fetch-hook'
 
 import { getFromLocalStorage, saveToLocalStorage } from "./utils/localStorage";
 import { PROMPTS_ID } from "./utils/constant";
 import { insertNumberToFront } from "./utils/utils";
+import Popup from './modules/Popup'
+import Tab from './modules/Tab'
 
 
 var appPrompt = null;
@@ -117,11 +120,13 @@ const App = ({ onDel, onHide }) => {
 
                 onHide && onHide();
             }}></div>
+            <Tab />
             <Template currentPrompt={currentPrompt} setPrompt={(prompt) => {
                 setPrompt(prompt);
                 appPrompt = prompt;
                 setPlaceHolder(prompt);
             }} />
+            <Popup />
             {/* <div className="musicControls">music controls</div> */}
         </div>
     )
