@@ -7,15 +7,12 @@ import './style/Close.scss'
 import './style/Icon.scss'
 import "./style/Input.scss"
 
-
 import Template from './modules/Template'
 import fetchHook from './utils/fetch-hook'
 
 import { getFromLocalStorage, saveToLocalStorage } from "./utils/localStorage";
 import { PROMPTS_ID } from "./utils/constant";
 import { insertNumberToFront } from "./utils/utils";
-import Popup from './modules/Popup'
-import Tab from './modules/Tab'
 
 
 var appPrompt = null;
@@ -44,15 +41,6 @@ fetchHook((url, options) => {
         promptsID = promptsID == null ? [appPrompt.id] : insertNumberToFront(appPrompt.id, promptsID);
         saveToLocalStorage(PROMPTS_ID, promptsID);
     }
-
-    // if (isRemoveTpl == false) {
-    //     isRemoveTpl = true;
-    //     var promptsTemplate = document.getElementById("chatGTP_prompts");
-    //     if (promptsTemplate != null) {
-    //         promptsTemplate.remove();
-    //         onDel();
-    //     }
-    // }
 
     try {
 
@@ -83,11 +71,9 @@ fetchHook((url, options) => {
 });
 
 
-
 const App = ({ onDel, onHide }) => {
 
     var [currentPrompt, setPrompt] = useState({ id: -1 });
-
     // 是否移除prompts模板，模板只移除一次;
 
     //设置输入框placeholder
@@ -100,34 +86,22 @@ const App = ({ onDel, onHide }) => {
 
             // 第1版不设置placeholder，先直接设置value
             textareaEle.setAttribute("placeholder", prompt != null ? prompt.placeholder : "Send a message.");
-
-            // textareaEle.setAttribute("value", prompt.content);
-            // textareaEle.style.height = "76px";
-            // textareaEle.value = prompt.content;
             textareaEle.focus();
         }
-
     }
-
-
     return (
         <div className="outerWrap">
-
-            <div class="close-button" href="javascript:void(0)" onClick={() => {
+            <div className="close-button" href="javascript:void(0)" onClick={() => {
                 setPrompt(null);
                 appPrompt = null;
                 setPlaceHolder(null);
-
                 onHide && onHide();
             }}></div>
-            <Tab />
             <Template currentPrompt={currentPrompt} setPrompt={(prompt) => {
                 setPrompt(prompt);
                 appPrompt = prompt;
                 setPlaceHolder(prompt);
             }} />
-            <Popup />
-            {/* <div className="musicControls">music controls</div> */}
         </div>
     )
 }

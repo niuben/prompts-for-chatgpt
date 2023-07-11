@@ -24,3 +24,45 @@
 .icon_pin {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAiJJREFUWEft1kuojWEUxvHfGUgGioGRISZkIhkYSUIRJRTCQEq5RLkl9zI4SiGUieQeGSBSLjHAiInIhKGSgYEwMNGqtetz2ue77PPVnpy3dmfv0/s+z3+vdz3r2wP6vAb67G8UoM0KTMfHplfaFkCY38ZNnGgC0RbAHpxM432F95UsbQGMzQosS8ddOF3pTispmIZbmIUbWJvG23C+CmKkFZif5pNwDtuxKqsR3ltwsQxiJAAbcTnFj+NIwagIsQmXhoPoFeAQwjTWTpzpYlCECNgr3SDqAERZn2XGx+MUNqfYBlwtKfH1Qk9Eb0RM/1tVAHEoRD5gdZovxu/8/LDE/Gz2xGdMyX2hcad4pgog9sZgOZAQM/A1zV+VmB/GMfzEPMzGj6Hmcb4OQOyL+45771SibORuzUTEueW431YKBrEX7zJqX7oIr8Dd/H+AXGh7DkS378BrhNm3gsEcPMbEvLaDVeZNrqCjtRILMwXPEaP3FybjBabm4IkBVGvV7YEQiyde9EDkO4zX4xGWIBpybpY/IGuvugBj8BYzC3GKSIVZxCqgXubf77XdG6TgGtbhU0bwfZo8wNKa6ejKVacCnUzfy2/4d4jSEyzoFaIKYE0+YiOC+0tKG92/CEdzANW+hTKAmF4hvLvw1CsTDvN4NVrDAUzIXzTxLH/TSLHh5uEAoquf5vxuKNlsezeAcfjTTKb33VVN2LtyzZOjAH2vwD+eyWIhIlZoSgAAAABJRU5ErkJggg==)
 }
+
+// 右上方加号样式
+.circle {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 50%;
+    position: absolute;
+    right: 2rem;
+    top: 100px;
+    cursor: pointer;
+}
+
+.plus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 2px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+}
+
+.plus::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 15px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+}
+
+/* 点击事件样式 */
+.circle:hover {
+    background-color: #202123;
+}
+
+.circle:active {
+    background-color: #353740;
+}

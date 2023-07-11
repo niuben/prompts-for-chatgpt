@@ -1,13 +1,15 @@
 import React, { useRef, useEffect, useState, createElement } from 'react'
 
 // import data from "./data/data.js"
-
 import Pagination from './Paginnation.js';
 import Select from "./Select.js";
-import Tool from './Tool.js';
 
+import Tab from './Tab.js';
+import Popup from './Popup'
 
-import data from "../data/github_data.js"
+import public_data from "../data/github_data.js";
+import useMyData from "../hooks/useMyData.js";
+
 import topicOptions from "../data/topic.js";
 
 // import keyword from "../data/keyword.js";
@@ -17,21 +19,26 @@ import { throttled as createThrottled, rangeObjectsById } from "../utils/utils.j
 import { getFromLocalStorage } from "../utils/localStorage";
 import { PROMPTS_ID } from "../utils/constant";
 
+
 // import Toast from "./Toast";
 var handle;
 
-
-const Template = ({ currentPrompt, setPrompt }) => {
+const Template = ({ currentPrompt, setPrompt, onOpenPopup }) => {
     // const [id, setId] = useState(null);
     const [page, setPage] = useState(0);
     const [pageLimite, setPageLimite] = useState(16);
     const [topic, setTopic] = useState("全部");
     const [query, setQuery] = useState("");
+    var [popupStatus, setPopupStatus] = useState(false);
+
+    const [myData, setMyData, updateMyData] = useMyData()
+
+    let [templateName, setTemplateName] = useState("public");
+
+    console.log("myData", myData);
 
     // const [isToast, setToast] = useState(false);
     // const mainInnerRef = useRef();
-
-
 
     var options = toSelect(topicOptions, {
         "key": "name",
@@ -39,6 +46,9 @@ const Template = ({ currentPrompt, setPrompt }) => {
     });
 
     var getTotalData = function () {
+
+        // 判断使用哪个数据
+        var data = templateName == "my" ? myData : public_data;
 
         // 将使用过模板放在最前面
         var prompts_id = getFromLocalStorage(PROMPTS_ID)
@@ -48,10 +58,9 @@ const Template = ({ currentPrompt, setPrompt }) => {
             return item;
         });
 
-
         var topicData = rangeData;
         // 获取当前分类数据
-        if (topic != "全部") {
+        if (topic != "全部" && templateName == "public") {
             topicData = [];
             rangeData.map((item) => {
                 if (item.topic == topic) {
@@ -65,21 +74,21 @@ const Template = ({ currentPrompt, setPrompt }) => {
         if (query != "" && query != undefined) {
             searchData = [];
             topicData.map((item) => {
+                item.title += "";
+                item.content += "";
                 if (item.title.indexOf(query) != -1 || item.content.indexOf(query) != -1) {
                     searchData.push(item);
                 }
             });
         }
-
         return searchData;
     }
 
-
-    var getCurrentData = function () {
-        var totalData = getTotalData();
+    var getCurrentData = function (data) {
+        // var totalData = getTotalData();
         var start = page * pageLimite;
         var end = start + pageLimite;
-        return totalData.slice(start, end);
+        return data.slice(start, end);
     }
 
     var getPrompt = function (_id) {
@@ -106,22 +115,35 @@ const Template = ({ currentPrompt, setPrompt }) => {
         return str.substr(0, length);
     }
 
-    // console.log("getPrompt", getPrompt(id));
+    useEffect(() => {
+        // console.log("触发templateName", templateName);
+        setData(getTotalData());
+    }, [templateName, popupStatus, query]);
 
-    var totalData = getTotalData();
-    var currentData = getCurrentData();
 
     // 用于节流时间句柄
     var handle;
-
+    const [data, setData] = useState(getTotalData());
     return (
         <div className="mainInner">
             <h2 className="title">ChatGPT 提示词</h2>
+            <Tab templateName={templateName} onChange={(templateName) => {
+                // console.log("templateName", templateName);
+                setTemplateName(templateName);
+                updateMyData();
+            }} />
             <Select options={options} title="分类" default={"全部"} onChange={(value) => {
                 console.log("value", value);
                 setTopic(value);
                 setPage(0);
             }} />
+            {/* 右上方加号 */}
+            <div className="circle" onClick={() => {
+                setPopupStatus(true);
+                onOpenPopup && onOpenPopup();
+            }}>
+                <div className="plus"></div>
+            </div>
             <input placeholder='搜索' className='right mr20' onChange={(e) => {
                 var val = e.target.value;
                 if (handle != undefined) {
@@ -135,7 +157,7 @@ const Template = ({ currentPrompt, setPrompt }) => {
             }} />
             <div className="cardsWrap clear">
                 <div className="cardsWrapInner">
-                    {currentData.map((prompt) => (
+                    {getCurrentData(data).map((prompt) => (
                         <div className={
                             "card" +
                             (currentPrompt != null && prompt.id == currentPrompt.id ? " active" : "") +
@@ -173,7 +195,7 @@ const Template = ({ currentPrompt, setPrompt }) => {
                 </div>
             </div>
             {
-                totalData.length > pageLimite && <Pagination style={{ float: "right" }} itemsPerPage={pageLimite} currentPage={page} totalItems={totalData.length} paginate={(page) => {
+                data.length > pageLimite && <Pagination style={{ float: "right" }} itemsPerPage={pageLimite} currentPage={page} totalItems={data.length} paginate={(page) => {
                     console.log("page", page);
                     setPage(page);
                 }} />
@@ -181,7 +203,14 @@ const Template = ({ currentPrompt, setPrompt }) => {
             {/* <Tool getPrompt={getPrompt} id={id} onEntry={(prompt) => {
                 // copy(prompt);
             }} /> */}
-
+            {
+                popupStatus && <Popup onClose={() => {
+                    setPopupStatus(false);
+                }} onSave={() => {
+                    updateMyData();
+                    setTemplateName("my");
+                }} />
+            }
         </div>
     )
 };
