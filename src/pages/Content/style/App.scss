@@ -55,8 +55,6 @@ body {
   // padding-top: 3.4rem;
   padding-top: 1rem;
 
-
-
   .mainContent {
     color: white;
 
@@ -145,10 +143,21 @@ body {
     }
 
     .cardContent {
-      padding: 0.4rem;
-      padding-bottom: 1rem;
       float: left;
-      margin-left: 10px;
+      padding: 0.4rem 0.8rem;
+      padding-bottom: 1rem;
+
+      .delete {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 14px;
+      }
+
+      .delete:hover {
+        font-weight: bold;
+        font-size: 16px;
+      }
 
       h3 {
         margin-block-start: 0em;

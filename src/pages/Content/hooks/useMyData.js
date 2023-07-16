@@ -32,11 +32,16 @@ const useMyData = () => {
     setMyData(getFromLocalStorage(NAME) || []);
   };
 
-  // const remove = () => {
-  //   setCount(count - step);
-  // };
+  const removeMyData = (id) => {
+    var prompts = getFromLocalStorage(NAME);
+    var newPrompts = [];
+    prompts.map((prompt) => {
+      if (prompt.id != id) newPrompts.push(prompt);
+    });
+    saveToLocalStorage(NAME, newPrompts);
+  };
 
-  return [myData, addMyData, updateMyData];
+  return [myData, addMyData, updateMyData, removeMyData];
 };
 
 export default useMyData;

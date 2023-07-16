@@ -12,8 +12,6 @@ import useMyData from "../hooks/useMyData.js";
 
 import topicOptions from "../data/topic.js";
 
-// import keyword from "../data/keyword.js";
-
 import { toSelect } from '../utils/toSelect.js';
 import { throttled as createThrottled, rangeObjectsById } from "../utils/utils.js";
 import { getFromLocalStorage } from "../utils/localStorage";
@@ -31,7 +29,7 @@ const Template = ({ currentPrompt, setPrompt, onOpenPopup }) => {
     const [query, setQuery] = useState("");
     var [popupStatus, setPopupStatus] = useState(false);
 
-    const [myData, setMyData, updateMyData] = useMyData()
+    const [myData, addMyData, updateMyData, removeMyData] = useMyData();
 
     let [templateName, setTemplateName] = useState("public");
 
@@ -116,9 +114,8 @@ const Template = ({ currentPrompt, setPrompt, onOpenPopup }) => {
     }
 
     useEffect(() => {
-        // console.log("触发templateName", templateName);
         setData(getTotalData());
-    }, [templateName, popupStatus, query]);
+    }, [templateName, popupStatus, query, myData]);
 
 
     // 用于节流时间句柄
@@ -132,12 +129,13 @@ const Template = ({ currentPrompt, setPrompt, onOpenPopup }) => {
                 setTemplateName(templateName);
                 updateMyData();
             }} />
-            <Select options={options} title="分类" default={"全部"} onChange={(value) => {
-                console.log("value", value);
-                setTopic(value);
-                setPage(0);
-            }} />
-            {/* 右上方加号 */}
+            {
+                templateName != "my" && <Select options={options} title="分类" default={"全部"} onChange={(value) => {
+                    console.log("value", value);
+                    setTopic(value);
+                    setPage(0);
+                }} />
+            }
             <div className="circle" onClick={() => {
                 setPopupStatus(true);
                 onOpenPopup && onOpenPopup();
@@ -164,7 +162,6 @@ const Template = ({ currentPrompt, setPrompt, onOpenPopup }) => {
                             " " +
                             (prompt.isUsed == true ? "isUsed" : "")
                         } key={prompt.id} onClick={() => {
-
                             //当id == 当前prompt.id，证明再次点击已选的prompt, 这是设置取消;
                             if (currentPrompt == null || currentPrompt.id != prompt.id) {
                                 // setId(prompt.id);
@@ -174,7 +171,14 @@ const Template = ({ currentPrompt, setPrompt, onOpenPopup }) => {
                             }
                         }}>
                             <div className="cardContent">
-                                <h3 >{substr(prompt.title, 50)}</h3>
+                                <h3>{substr(prompt.title, 50)}</h3>
+                                {
+                                    templateName == "my" && <a className='delete' onClick={() => {
+                                        removeMyData(prompt.id);
+                                        updateMyData();
+                                    }}>x</a>
+                                }
+
                                 <p>
                                     <span className='icon icon_topic'>{prompt.topic}</span>
                                     <span className='icon icon_author'>{[prompt.author]}</span>
