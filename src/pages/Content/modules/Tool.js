@@ -49,10 +49,11 @@ var DropdownsAndInput = ({ getPrompt, id, onEntry }) => {
 
   return (
     <div className="dropdowns-and-input-container">
-      {typeof prompt == "object" && prompt != null ?
+      {typeof prompt == 'object' && prompt != null ? (
         <div className="prompts-tips ellipsis">{prompt.title}</div>
-        : ""
-      }
+      ) : (
+        ''
+      )}
 
       {/* <div className="dropdown-container-wrap">
         <div className="dropdown-container">
@@ -103,6 +104,6 @@ var DropdownsAndInput = ({ getPrompt, id, onEntry }) => {
       </div> */}
     </div>
   );
-}
+};
 
 export default DropdownsAndInput;

@@ -1,21 +1,21 @@
 .tab-buttons {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .tab-buttons button {
-    padding: 8px 16px;
-    background-color: #eee;
-    border: none;
-    cursor: pointer;
+  padding: 8px 16px;
+  background-color: #eee;
+  border: none;
+  cursor: pointer;
 }
 
 .tab-buttons button.active {
-    background-color: #ccc;
+  background-color: #ccc;
 }
 
 .tab-content {
-    padding: 16px;
-    border: 1px solid #ccc;
-    margin-top: 16px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  margin-top: 16px;
 }

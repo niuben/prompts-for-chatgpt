@@ -8,10 +8,10 @@
   }
 */
 export function toSelect(arr, map) {
-    return arr.map((item) => {
-        return {
-            key: item[map["key"]],
-            val: item[map["val"]]
-        }
-    });
+  return arr.map((item) => {
+    return {
+      key: item[map['key']],
+      val: item[map['val']],
+    };
+  });
 }

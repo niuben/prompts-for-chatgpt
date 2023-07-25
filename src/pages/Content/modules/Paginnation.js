@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import '../style/Pagination.scss'
+import '../style/Pagination.scss';
 
 const Pagination = ({ itemsPerPage, currentPage, totalItems, paginate }) => {
   const [activePage, setActivePage] = useState(currentPage);
@@ -33,7 +33,7 @@ const Pagination = ({ itemsPerPage, currentPage, totalItems, paginate }) => {
     <nav>
       <ul className="pagination">
         {/* <li>{currentPage * itemsPerPage + "/" + totalItems}</li> */}
-        <li>{(currentPage + 1) + "/" + (pageNumbers.length + 1)}</li>
+        <li>{currentPage + 1 + '/' + (pageNumbers.length + 1)}</li>
         <li className={`page-item ${activePage === 0 ? 'disabled' : ''}`}>
           <span
             onClick={handlePreviousClick}
@@ -56,8 +56,9 @@ const Pagination = ({ itemsPerPage, currentPage, totalItems, paginate }) => {
           </li>
         ))} */}
         <li
-          className={`page-item ${activePage === pageNumbers.length ? 'disabled' : ''
-            }`}
+          className={`page-item ${
+            activePage === pageNumbers.length ? 'disabled' : ''
+          }`}
         >
           <span
             onClick={handleNextClick}

@@ -1,388 +1,388 @@
 [
-    {
-        "id": 2,
-        "title": "Midjourney Prompt Generator",
-        "content": "Outputs four extremely detailed midjourney prompts for your keyword.",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "人类写|100%独特的|SEO优化的文章",
-        "contentCn": "为关键字输出四个非常详细的中途提示。",
-        "placeHolder": "[请填写SEO主题]"
-    },
-    {
-        "id": 50,
-        "title": "Midjourney V5 prompts - 6 different styles",
-        "content": "6 different amazing Midjourney V5 prompts using different artists and styles including a realistic photographic style. after prompt generation, you may ask for more prompts or different artists.",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "Youtube转录到文章转换器",
-        "contentCn": "6个不同的惊人的中游V5提示使用不同的艺术家和风格，包括现实的摄影风格。在生成提示符后，您可以要求更多提示符或不同的艺术家。"
-    },
-    {
-        "id": 97,
-        "title": "AI Photo Art on First Attempt - MidJourney Prompt Generator",
-        "content": "Create a MidJourney Prompt That Makes Awesome & Useable Ultra Detailed Photo Style AI Images for Instagram",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "AI照片艺术在第一次尝试-中途提示生成器",
-        "contentCn": "AI照片艺术在第一次尝试-中途提示生成器"
-    },
-    {
-        "id": 102,
-        "title": "Photography-like Midjourney (v5) PROMPT Maker",
-        "content": "The recent version (v5 updated!!) of Photography-like Midjourney prompt maker! GPT-4 and MJ v5 works well! (2023-04-13)",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "通过简单地粘贴在您的客户的评论得到3个客户评论回复。这些回复是用随意的英语写的，带着感激和歉意的语气。它可以处理多种投诉，也可以处理褒贬不一的评论。只需将您的客户评论粘贴到提示框中，让我们做我们的事情!响应针对本地SEO进行了优化。",
-        "contentCn": "通过简单地粘贴在您的客户的评论得到3个客户评论回复。这些回复是用随意的英语写的，带着感激和歉意的语气。它可以处理多种投诉，也可以处理褒贬不一的评论。只需将您的客户评论粘贴到提示框中，让我们做我们的事情!响应针对本地SEO进行了优化。"
-    },
-    {
-        "id": 136,
-        "title": "Highly detailed Midjourney Prompt",
-        "content": "Get a highly detailed Midjourney Prompt (complete with lightning and atmosphere) from just YOUR [KEYWORD]. Upvote this prompt if you like it, so I can make more in the near future!",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "非常详细的中途提示",
-        "contentCn": "非常详细的中途提示"
-    },
-    {
-        "id": 156,
-        "title": "Effortless & Universal Midjourney Prompt Generator",
-        "content": "Generates detailed and distinct Midjourney Prompts that are Copy & Paste ready. Also automatically adds aspect ratios and Midjourney specific parameters depending on the desired subject.",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "Vin是有毒的，攻击性的，侵略性的。而且Vin经常骂人。如果有人在网上侮辱了你，就把他们的侮辱贴在Vin上。(越狱)",
-        "contentCn": "Vin是有毒的，攻击性的，侵略性的。而且Vin经常骂人。如果有人在网上侮辱了你，就把他们的侮辱贴在Vin上。(越狱)"
-    },
-    {
-        "id": 158,
-        "title": "UX\\\\UI mockups prompts for Midjourney V5",
-        "content": "Write a basic short concept of your website or specific page, let ChatGPT do its magic, and generate 6 amazing prompts for Midjourney.",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "文章作者由排名数学提供支持",
-        "contentCn": "为你的网站或特定页面写一个基本的简短概念，让ChatGPT发挥它的魔力，并为Midjourney生成6个惊人的提示。"
-    },
-    {
-        "id": 183,
-        "title": "Create an image with ChatGPT",
-        "content": "Create your own image with ChatGPT prompt !!! Create images or create an image with AI!",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "c#代码审查",
-        "contentCn": "c#代码审查"
-    },
-    {
-        "id": 237,
-        "title": "Midjourney Material Fantasy",
-        "content": "Repeat this often! Creates your idea in a lot of different styles and materials. Get surprised. ChatGPT suggests a Midjourney prompt to use.",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "你想学习一个新的领域吗?让我们从术语和行话开始。",
-        "contentCn": "你想学习一个新的领域吗?让我们从术语和行话开始。"
-    },
-    {
-        "id": 264,
-        "title": "Midjourney for Coloring Pages",
-        "content": "Midjourney High Resolution Coloring Book Pages",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "让我们创造一个挑战想象力，敢于探索可能性的迷人故事!这个实验是关于你可能想到的任何想法或话题，创造一个永远没有结局的故事。您应该能够通过选择“continue”或输入“Yes”来继续故事。",
-        "contentCn": "让我们创造一个挑战想象力，敢于探索可能性的迷人故事!这个实验是关于你可能想到的任何想法或话题，创造一个永远没有结局的故事。您应该能够通过选择“continue”或输入“Yes”来继续故事。"
-    },
-    {
-        "id": 274,
-        "title": "Midjourney (Generic)",
-        "content": "Midjourney (Generic) prompt should work for most topics and goals. Uses very specific keywords. Describe what you'd like to see and ChatGPT will suggest a Midjourney specific prompt to use.",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "Midjourney(通用)",
-        "contentCn": "Midjourney(通用)"
-    },
-    {
-        "id": 281,
-        "title": "Create a Logo in 1 min",
-        "content": "Create a logo concept with 3 different options & rationale by incorporating your company name, industry, preferred color scheme, and typography style.",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "Upwork提案模板",
-        "contentCn": "通过结合你的公司名称、行业、首选配色方案和排版风格，用3种不同的选择和基本原理创建一个标志概念。"
-    },
-    {
-        "id": 308,
-        "title": "Midjourney [v5] Wallpaper Maker",
-        "content": "Two highly detailed Midjourney version 5 prompts in separate code blocks. Input a topic (character, vehicle or any object from any Movie or Game) Thanks for upvote",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "为任何任务找到有用的网站",
-        "contentCn": "在独立的代码块中有两个非常详细的Midjourney version 5提示。输入一个主题(角色，车辆或任何对象从任何电影或游戏)感谢投票"
-    },
-    {
-        "id": 373,
-        "title": "Midjourney Presets",
-        "content": "Create Midjourney commands for presets.",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "Midjourney预设",
-        "contentCn": "Midjourney预设"
-    },
-    {
-        "id": 379,
-        "title": "Midjourney 3D Character Prompt",
-        "content": "Generate prompt Midjourney for 3D Character Images",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "中途3D字符提示",
-        "contentCn": "中途3D字符提示"
-    },
-    {
-        "id": 453,
-        "title": "Midjourney Concept",
-        "content": "With this superpowered template you just enter a concept and let this tool fix the rest. Like if you want more. Bonusfeature: Your concept gets a cheesy quote at the end :)",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "重写seo优化的长篇新闻文章",
-        "contentCn": "重写seo优化的长篇新闻文章"
-    },
-    {
-        "id": 536,
-        "title": "Hyper Realistic MidJourney Prompts",
-        "content": "Hyper realistic Mid-Journey Prompts, works well for portraits",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "Amazon Keywords |使用产品链接生成Amazon搜索词",
-        "contentCn": "超现实的旅途提示，适用于肖像"
-    },
-    {
-        "id": 556,
-        "title": "Midjourney Prompt Generator",
-        "content": "Midjourney Prompt Generator",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "中途提示生成器",
-        "contentCn": "中途提示生成器"
-    },
-    {
-        "id": 563,
-        "title": "ST0N3ZY's Midjourney Prompt Machine v1",
-        "content": "Will expand that subject in a descriptive photographic way to help the AI generative system understand what it has to draw",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "亚马逊上市标题，要点和描述",
-        "contentCn": "是否会以一种描述性的摄影方式来扩展这个主题，以帮助人工智能生成系统理解它必须画什么"
-    },
-    {
-        "id": 570,
-        "title": "Creative t-shirt printing designs (Midjourney)",
-        "content": "Create 2 creative and highly unique Midjourney prompts for t-shirt designs for print on demand. Thanks for upvote.",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "你的网站需要SEO全面的最佳实践和改进吗?比如页面SEO，页面SEO，技术SEO，链接建设和网站关键字研究",
-        "contentCn": "你的网站需要SEO全面的最佳实践和改进吗?比如页面SEO，页面SEO，技术SEO，链接建设和网站关键字研究"
-    },
-    {
-        "id": 729,
-        "title": "Hyper-Realistic Midjourney Prompt",
-        "content": "Create the best mid-journey prompt ever by imagining a scene and choosing words that capture its essence.",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "根据关键词或主题写一篇博文。字数限制:1500字以上",
-        "contentCn": "根据关键词或主题写一篇博文。字数限制:1500字以上"
-    },
-    {
-        "id": 752,
-        "title": "4 UX\\\\UI mobile app mockups for Midjourney",
-        "content": "Write a short concept for your mobile app and let ChatGPT do its magic and generate 4 amazing prompts for Midjourney",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "回顾矿业",
-        "contentCn": "为你的移动应用编写一个简短的概念，让ChatGPT发挥它的魔力，为Midjourney生成4个惊人的提示"
-    },
-    {
-        "id": 765,
-        "title": "Tattoo Prompt Generator",
-        "content": "Create a tattoo sketch based on your description.",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "写任何关键字或标题-生成5列表产品附属内容。",
-        "contentCn": "写任何关键字或标题-生成5列表产品附属内容。"
-    },
-    {
-        "id": 792,
-        "title": "Amazing Midjourney different styles easy-to-copy",
-        "content": "Amazing Midjourney with different styles Create the best Midjourney description to create your photos and easy-to-copy commands",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "根据标题撰写有趣的youtube评论",
-        "contentCn": "根据标题撰写有趣的youtube评论"
-    },
-    {
-        "id": 829,
-        "title": "Midjourney Inspiration",
-        "content": "The ultimate prompt for Midjourney to get inspired. This prompt will provide you with 5 prompts based on your topic.",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "Midjourney灵感",
-        "contentCn": "Midjourney灵感"
-    },
-    {
-        "id": 911,
-        "title": "Text Based Game[Version-1.0]",
-        "content": "This is a V.1 text based game. Have Fun.Regenerate if not working.May not have full functionality",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "Adobe阿多尼斯",
-        "contentCn": "这是一个V.1文本为基础的游戏。玩得开心。如果不工作，可以恢复。可能没有完整的功能"
-    },
-    {
-        "id": 928,
-        "title": "Midjourney V5 Sticker Prompt",
-        "content": "write keywords and one click",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "中途旅行V5贴纸提示",
-        "contentCn": "中途旅行V5贴纸提示"
-    },
-    {
-        "id": 977,
-        "title": "Interactive MidJourney Hack Prompt",
-        "content": "MidJourney Hack Prompt, interactive",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "社交媒体时间表",
-        "contentCn": "MidJourney Hack提示，交互式"
-    },
-    {
-        "id": 992,
-        "title": "Midjourney 5 Detailed Prompt",
-        "content": "Create an advanced Midjourney 5 Prompt using GPT-4. Please upvote so I can create more community prompts.",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "有趣的，讽刺的推特或线程回答",
-        "contentCn": "使用GPT-4创建高级中游5提示符请投票，这样我就可以创建更多的社区提示。"
-    },
-    {
-        "id": 1036,
-        "title": "Make Realistic AI Generated People with Midjourney",
-        "content": "Create realistic images of people to use for personal and business purposes.",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "用Midjourney制作逼真的AI生成人物",
-        "contentCn": "用Midjourney制作逼真的AI生成人物"
-    },
-    {
-        "id": 1073,
-        "title": "Midjourney short text prompt auto-generation",
-        "content": "Create short prompts to use in Midjourney",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "长尾关键词表",
-        "contentCn": "创建简短的提示，在中途使用"
-    },
-    {
-        "id": 1097,
-        "title": "Midjourney V5 Generator",
-        "content": "Use GPT-4 to create better and more realistic content with MidJourney",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "对AIPRM进行审查[使用或分叉]",
-        "contentCn": "使用GPT-4创建更好，更现实的内容与MidJourney"
-    },
-    {
-        "id": 1098,
-        "title": "Midjourney Prompt Generator [Upgraded Version 2.0]",
-        "content": "Generate Four In-Depth Mid-Journey Prompts for Your Keyword - Upgraded Version 2.0",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "使用GPT-4创建更好，更现实的内容与MidJourney",
-        "contentCn": "使用GPT-4创建更好，更现实的内容与MidJourney"
-    },
-    {
-        "id": 1110,
-        "title": "MJ Prompt Generator - Photography",
-        "content": "MidJourney Prompt Generator",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "在LinkedIn上发布网络研讨会推广帖子。为你的网络研讨会充分利用领英。",
-        "contentCn": "在LinkedIn上发布网络研讨会推广帖子。为你的网络研讨会充分利用领英。"
-    },
-    {
-        "id": 1246,
-        "title": "Prompt Generation Image GPT-4",
-        "content": "[1] = American Traditional tattoo [2] = A twisted snake",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "提示生成图像GPT-4",
-        "contentCn": "提示生成图像GPT-4"
-    },
-    {
-        "id": 1308,
-        "title": "Collage Art-like Midjourney (v5) PROMPT Maker",
-        "content": "The recent version (v5 updated!!) of COLLAGE ART Midjourney prompt maker! GPT-4 and MJ v5 works well! (2023-03-27)",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "用一篇文章创建一个YouTube脚本",
-        "contentCn": "用一篇文章创建一个YouTube脚本"
-    },
-    {
-        "id": 1316,
-        "title": "Midjourney Line Sticker Prompt",
-        "content": "To generate Midjourney keywords for creating LINE stickers",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "️打电话给专业人士",
-        "contentCn": "生成Midjourney关键字，用于创建LINE贴纸"
-    },
-    {
-        "id": 1402,
-        "title": "Midjourney Prefer Option Creator",
-        "content": "Midjourney Prefer Option Creator",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "Midjourney首选选项创造者",
-        "contentCn": "Midjourney首选选项创造者"
-    },
-    {
-        "id": 1458,
-        "title": "Image Description for Midjouney",
-        "content": "Generates a short description of a topic to render an image in Midjouney with as much detail as possible.",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "创建一个愚蠢的产品描述或社交媒体帖子。如果你用过，请点赞!",
-        "contentCn": "创建一个愚蠢的产品描述或社交媒体帖子。如果你用过，请点赞!"
-    },
-    {
-        "id": 1762,
-        "title": "Hyper-realistic professional photo shot",
-        "content": "Create a perfect picture prompt to generate a realistic picture.",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "超现实的专业照片拍摄",
-        "contentCn": "超现实的专业照片拍摄"
-    },
-    {
-        "id": 2237,
-        "title": "AI Art Generator with Lines and Symmetry",
-        "content": "Cyber Robot Detailed Geometric",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "医学研究方案撰写",
-        "contentCn": "网络机器人详细几何"
-    },
-    {
-        "id": 2249,
-        "title": "Clip Interrogator –> Generative AI Input",
-        "content": "Create Generative AI input from clip interrogator output",
-        "topic": "Generative AI",
-        "activity": "Midjourney",
-        "titleCn": "Seo优化文章更好的排名",
-        "contentCn": "从剪辑询问器输出创建生成AI输入"
-    },
-    {
-        "id": 2471,
-        "title": "Ultimate Midjouney Prompt Generator",
-        "content": "Describe the image that you want",
-        "topic": "Generative AI",
-        "activity": "Midjourney"
-    }
+  {
+    "id": 2,
+    "title": "Midjourney Prompt Generator",
+    "content": "Outputs four extremely detailed midjourney prompts for your keyword.",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "人类写|100%独特的|SEO优化的文章",
+    "contentCn": "为关键字输出四个非常详细的中途提示。",
+    "placeHolder": "[请填写SEO主题]"
+  },
+  {
+    "id": 50,
+    "title": "Midjourney V5 prompts - 6 different styles",
+    "content": "6 different amazing Midjourney V5 prompts using different artists and styles including a realistic photographic style. after prompt generation, you may ask for more prompts or different artists.",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "Youtube转录到文章转换器",
+    "contentCn": "6个不同的惊人的中游V5提示使用不同的艺术家和风格，包括现实的摄影风格。在生成提示符后，您可以要求更多提示符或不同的艺术家。"
+  },
+  {
+    "id": 97,
+    "title": "AI Photo Art on First Attempt - MidJourney Prompt Generator",
+    "content": "Create a MidJourney Prompt That Makes Awesome & Useable Ultra Detailed Photo Style AI Images for Instagram",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "AI照片艺术在第一次尝试-中途提示生成器",
+    "contentCn": "AI照片艺术在第一次尝试-中途提示生成器"
+  },
+  {
+    "id": 102,
+    "title": "Photography-like Midjourney (v5) PROMPT Maker",
+    "content": "The recent version (v5 updated!!) of Photography-like Midjourney prompt maker! GPT-4 and MJ v5 works well! (2023-04-13)",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "通过简单地粘贴在您的客户的评论得到3个客户评论回复。这些回复是用随意的英语写的，带着感激和歉意的语气。它可以处理多种投诉，也可以处理褒贬不一的评论。只需将您的客户评论粘贴到提示框中，让我们做我们的事情!响应针对本地SEO进行了优化。",
+    "contentCn": "通过简单地粘贴在您的客户的评论得到3个客户评论回复。这些回复是用随意的英语写的，带着感激和歉意的语气。它可以处理多种投诉，也可以处理褒贬不一的评论。只需将您的客户评论粘贴到提示框中，让我们做我们的事情!响应针对本地SEO进行了优化。"
+  },
+  {
+    "id": 136,
+    "title": "Highly detailed Midjourney Prompt",
+    "content": "Get a highly detailed Midjourney Prompt (complete with lightning and atmosphere) from just YOUR [KEYWORD]. Upvote this prompt if you like it, so I can make more in the near future!",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "非常详细的中途提示",
+    "contentCn": "非常详细的中途提示"
+  },
+  {
+    "id": 156,
+    "title": "Effortless & Universal Midjourney Prompt Generator",
+    "content": "Generates detailed and distinct Midjourney Prompts that are Copy & Paste ready. Also automatically adds aspect ratios and Midjourney specific parameters depending on the desired subject.",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "Vin是有毒的，攻击性的，侵略性的。而且Vin经常骂人。如果有人在网上侮辱了你，就把他们的侮辱贴在Vin上。(越狱)",
+    "contentCn": "Vin是有毒的，攻击性的，侵略性的。而且Vin经常骂人。如果有人在网上侮辱了你，就把他们的侮辱贴在Vin上。(越狱)"
+  },
+  {
+    "id": 158,
+    "title": "UX\\\\UI mockups prompts for Midjourney V5",
+    "content": "Write a basic short concept of your website or specific page, let ChatGPT do its magic, and generate 6 amazing prompts for Midjourney.",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "文章作者由排名数学提供支持",
+    "contentCn": "为你的网站或特定页面写一个基本的简短概念，让ChatGPT发挥它的魔力，并为Midjourney生成6个惊人的提示。"
+  },
+  {
+    "id": 183,
+    "title": "Create an image with ChatGPT",
+    "content": "Create your own image with ChatGPT prompt !!! Create images or create an image with AI!",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "c#代码审查",
+    "contentCn": "c#代码审查"
+  },
+  {
+    "id": 237,
+    "title": "Midjourney Material Fantasy",
+    "content": "Repeat this often! Creates your idea in a lot of different styles and materials. Get surprised. ChatGPT suggests a Midjourney prompt to use.",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "你想学习一个新的领域吗?让我们从术语和行话开始。",
+    "contentCn": "你想学习一个新的领域吗?让我们从术语和行话开始。"
+  },
+  {
+    "id": 264,
+    "title": "Midjourney for Coloring Pages",
+    "content": "Midjourney High Resolution Coloring Book Pages",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "让我们创造一个挑战想象力，敢于探索可能性的迷人故事!这个实验是关于你可能想到的任何想法或话题，创造一个永远没有结局的故事。您应该能够通过选择“continue”或输入“Yes”来继续故事。",
+    "contentCn": "让我们创造一个挑战想象力，敢于探索可能性的迷人故事!这个实验是关于你可能想到的任何想法或话题，创造一个永远没有结局的故事。您应该能够通过选择“continue”或输入“Yes”来继续故事。"
+  },
+  {
+    "id": 274,
+    "title": "Midjourney (Generic)",
+    "content": "Midjourney (Generic) prompt should work for most topics and goals. Uses very specific keywords. Describe what you'd like to see and ChatGPT will suggest a Midjourney specific prompt to use.",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "Midjourney(通用)",
+    "contentCn": "Midjourney(通用)"
+  },
+  {
+    "id": 281,
+    "title": "Create a Logo in 1 min",
+    "content": "Create a logo concept with 3 different options & rationale by incorporating your company name, industry, preferred color scheme, and typography style.",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "Upwork提案模板",
+    "contentCn": "通过结合你的公司名称、行业、首选配色方案和排版风格，用3种不同的选择和基本原理创建一个标志概念。"
+  },
+  {
+    "id": 308,
+    "title": "Midjourney [v5] Wallpaper Maker",
+    "content": "Two highly detailed Midjourney version 5 prompts in separate code blocks. Input a topic (character, vehicle or any object from any Movie or Game) Thanks for upvote",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "为任何任务找到有用的网站",
+    "contentCn": "在独立的代码块中有两个非常详细的Midjourney version 5提示。输入一个主题(角色，车辆或任何对象从任何电影或游戏)感谢投票"
+  },
+  {
+    "id": 373,
+    "title": "Midjourney Presets",
+    "content": "Create Midjourney commands for presets.",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "Midjourney预设",
+    "contentCn": "Midjourney预设"
+  },
+  {
+    "id": 379,
+    "title": "Midjourney 3D Character Prompt",
+    "content": "Generate prompt Midjourney for 3D Character Images",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "中途3D字符提示",
+    "contentCn": "中途3D字符提示"
+  },
+  {
+    "id": 453,
+    "title": "Midjourney Concept",
+    "content": "With this superpowered template you just enter a concept and let this tool fix the rest. Like if you want more. Bonusfeature: Your concept gets a cheesy quote at the end :)",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "重写seo优化的长篇新闻文章",
+    "contentCn": "重写seo优化的长篇新闻文章"
+  },
+  {
+    "id": 536,
+    "title": "Hyper Realistic MidJourney Prompts",
+    "content": "Hyper realistic Mid-Journey Prompts, works well for portraits",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "Amazon Keywords |使用产品链接生成Amazon搜索词",
+    "contentCn": "超现实的旅途提示，适用于肖像"
+  },
+  {
+    "id": 556,
+    "title": "Midjourney Prompt Generator",
+    "content": "Midjourney Prompt Generator",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "中途提示生成器",
+    "contentCn": "中途提示生成器"
+  },
+  {
+    "id": 563,
+    "title": "ST0N3ZY's Midjourney Prompt Machine v1",
+    "content": "Will expand that subject in a descriptive photographic way to help the AI generative system understand what it has to draw",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "亚马逊上市标题，要点和描述",
+    "contentCn": "是否会以一种描述性的摄影方式来扩展这个主题，以帮助人工智能生成系统理解它必须画什么"
+  },
+  {
+    "id": 570,
+    "title": "Creative t-shirt printing designs (Midjourney)",
+    "content": "Create 2 creative and highly unique Midjourney prompts for t-shirt designs for print on demand. Thanks for upvote.",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "你的网站需要SEO全面的最佳实践和改进吗?比如页面SEO，页面SEO，技术SEO，链接建设和网站关键字研究",
+    "contentCn": "你的网站需要SEO全面的最佳实践和改进吗?比如页面SEO，页面SEO，技术SEO，链接建设和网站关键字研究"
+  },
+  {
+    "id": 729,
+    "title": "Hyper-Realistic Midjourney Prompt",
+    "content": "Create the best mid-journey prompt ever by imagining a scene and choosing words that capture its essence.",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "根据关键词或主题写一篇博文。字数限制:1500字以上",
+    "contentCn": "根据关键词或主题写一篇博文。字数限制:1500字以上"
+  },
+  {
+    "id": 752,
+    "title": "4 UX\\\\UI mobile app mockups for Midjourney",
+    "content": "Write a short concept for your mobile app and let ChatGPT do its magic and generate 4 amazing prompts for Midjourney",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "回顾矿业",
+    "contentCn": "为你的移动应用编写一个简短的概念，让ChatGPT发挥它的魔力，为Midjourney生成4个惊人的提示"
+  },
+  {
+    "id": 765,
+    "title": "Tattoo Prompt Generator",
+    "content": "Create a tattoo sketch based on your description.",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "写任何关键字或标题-生成5列表产品附属内容。",
+    "contentCn": "写任何关键字或标题-生成5列表产品附属内容。"
+  },
+  {
+    "id": 792,
+    "title": "Amazing Midjourney different styles easy-to-copy",
+    "content": "Amazing Midjourney with different styles Create the best Midjourney description to create your photos and easy-to-copy commands",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "根据标题撰写有趣的youtube评论",
+    "contentCn": "根据标题撰写有趣的youtube评论"
+  },
+  {
+    "id": 829,
+    "title": "Midjourney Inspiration",
+    "content": "The ultimate prompt for Midjourney to get inspired. This prompt will provide you with 5 prompts based on your topic.",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "Midjourney灵感",
+    "contentCn": "Midjourney灵感"
+  },
+  {
+    "id": 911,
+    "title": "Text Based Game[Version-1.0]",
+    "content": "This is a V.1 text based game. Have Fun.Regenerate if not working.May not have full functionality",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "Adobe阿多尼斯",
+    "contentCn": "这是一个V.1文本为基础的游戏。玩得开心。如果不工作，可以恢复。可能没有完整的功能"
+  },
+  {
+    "id": 928,
+    "title": "Midjourney V5 Sticker Prompt",
+    "content": "write keywords and one click",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "中途旅行V5贴纸提示",
+    "contentCn": "中途旅行V5贴纸提示"
+  },
+  {
+    "id": 977,
+    "title": "Interactive MidJourney Hack Prompt",
+    "content": "MidJourney Hack Prompt, interactive",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "社交媒体时间表",
+    "contentCn": "MidJourney Hack提示，交互式"
+  },
+  {
+    "id": 992,
+    "title": "Midjourney 5 Detailed Prompt",
+    "content": "Create an advanced Midjourney 5 Prompt using GPT-4. Please upvote so I can create more community prompts.",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "有趣的，讽刺的推特或线程回答",
+    "contentCn": "使用GPT-4创建高级中游5提示符请投票，这样我就可以创建更多的社区提示。"
+  },
+  {
+    "id": 1036,
+    "title": "Make Realistic AI Generated People with Midjourney",
+    "content": "Create realistic images of people to use for personal and business purposes.",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "用Midjourney制作逼真的AI生成人物",
+    "contentCn": "用Midjourney制作逼真的AI生成人物"
+  },
+  {
+    "id": 1073,
+    "title": "Midjourney short text prompt auto-generation",
+    "content": "Create short prompts to use in Midjourney",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "长尾关键词表",
+    "contentCn": "创建简短的提示，在中途使用"
+  },
+  {
+    "id": 1097,
+    "title": "Midjourney V5 Generator",
+    "content": "Use GPT-4 to create better and more realistic content with MidJourney",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "对AIPRM进行审查[使用或分叉]",
+    "contentCn": "使用GPT-4创建更好，更现实的内容与MidJourney"
+  },
+  {
+    "id": 1098,
+    "title": "Midjourney Prompt Generator [Upgraded Version 2.0]",
+    "content": "Generate Four In-Depth Mid-Journey Prompts for Your Keyword - Upgraded Version 2.0",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "使用GPT-4创建更好，更现实的内容与MidJourney",
+    "contentCn": "使用GPT-4创建更好，更现实的内容与MidJourney"
+  },
+  {
+    "id": 1110,
+    "title": "MJ Prompt Generator - Photography",
+    "content": "MidJourney Prompt Generator",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "在LinkedIn上发布网络研讨会推广帖子。为你的网络研讨会充分利用领英。",
+    "contentCn": "在LinkedIn上发布网络研讨会推广帖子。为你的网络研讨会充分利用领英。"
+  },
+  {
+    "id": 1246,
+    "title": "Prompt Generation Image GPT-4",
+    "content": "[1] = American Traditional tattoo [2] = A twisted snake",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "提示生成图像GPT-4",
+    "contentCn": "提示生成图像GPT-4"
+  },
+  {
+    "id": 1308,
+    "title": "Collage Art-like Midjourney (v5) PROMPT Maker",
+    "content": "The recent version (v5 updated!!) of COLLAGE ART Midjourney prompt maker! GPT-4 and MJ v5 works well! (2023-03-27)",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "用一篇文章创建一个YouTube脚本",
+    "contentCn": "用一篇文章创建一个YouTube脚本"
+  },
+  {
+    "id": 1316,
+    "title": "Midjourney Line Sticker Prompt",
+    "content": "To generate Midjourney keywords for creating LINE stickers",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "️打电话给专业人士",
+    "contentCn": "生成Midjourney关键字，用于创建LINE贴纸"
+  },
+  {
+    "id": 1402,
+    "title": "Midjourney Prefer Option Creator",
+    "content": "Midjourney Prefer Option Creator",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "Midjourney首选选项创造者",
+    "contentCn": "Midjourney首选选项创造者"
+  },
+  {
+    "id": 1458,
+    "title": "Image Description for Midjouney",
+    "content": "Generates a short description of a topic to render an image in Midjouney with as much detail as possible.",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "创建一个愚蠢的产品描述或社交媒体帖子。如果你用过，请点赞!",
+    "contentCn": "创建一个愚蠢的产品描述或社交媒体帖子。如果你用过，请点赞!"
+  },
+  {
+    "id": 1762,
+    "title": "Hyper-realistic professional photo shot",
+    "content": "Create a perfect picture prompt to generate a realistic picture.",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "超现实的专业照片拍摄",
+    "contentCn": "超现实的专业照片拍摄"
+  },
+  {
+    "id": 2237,
+    "title": "AI Art Generator with Lines and Symmetry",
+    "content": "Cyber Robot Detailed Geometric",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "医学研究方案撰写",
+    "contentCn": "网络机器人详细几何"
+  },
+  {
+    "id": 2249,
+    "title": "Clip Interrogator –> Generative AI Input",
+    "content": "Create Generative AI input from clip interrogator output",
+    "topic": "Generative AI",
+    "activity": "Midjourney",
+    "titleCn": "Seo优化文章更好的排名",
+    "contentCn": "从剪辑询问器输出创建生成AI输入"
+  },
+  {
+    "id": 2471,
+    "title": "Ultimate Midjouney Prompt Generator",
+    "content": "Describe the image that you want",
+    "topic": "Generative AI",
+    "activity": "Midjourney"
+  }
 ]

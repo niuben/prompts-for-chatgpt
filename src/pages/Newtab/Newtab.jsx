@@ -16,9 +16,7 @@ const Newtab = () => {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-        >
-
-        </a>
+        ></a>
         <h6>The color of this paragraph is defined using SASS.</h6>
       </header>
     </div>

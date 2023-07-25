@@ -1,33 +1,33 @@
 .ellipsis {
-    overflow: hidden; //超出的文本隐藏
-    text-overflow: ellipsis; //溢出用省略号显示
-    white-space: nowrap; //溢出不换行
+  overflow: hidden; //超出的文本隐藏
+  text-overflow: ellipsis; //溢出用省略号显示
+  white-space: nowrap; //溢出不换行
 }
 
 .multiLineEllipsis {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .left {
-    float: left;
+  float: left;
 }
 
 .right {
-    float: right;
+  float: right;
 }
 
 .clear {
-    clear: both;
+  clear: both;
 }
 
 .ml10 {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .mr20 {
-    margin-right: 20px;
+  margin-right: 20px;
 }

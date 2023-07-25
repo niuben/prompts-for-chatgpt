@@ -1,5 +1,5 @@
 {
-  "name": "ChatGPT Prompts 提示词",
+  "name": "ChatGPT Prompts",
   "version": "0.7.0",
   "description": "A chrome extension boilerplate built with React 18, Webpack 5, and Webpack Dev Server 4",
   "license": "MIT",
@@ -13,6 +13,7 @@
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
   "dependencies": {
+    "jquery": "^3.7.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },

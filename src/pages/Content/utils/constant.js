@@ -1,1 +1,1 @@
-export const PROMPTS_ID = "prompts_id";
+export const PROMPTS_ID = 'prompts_id';
