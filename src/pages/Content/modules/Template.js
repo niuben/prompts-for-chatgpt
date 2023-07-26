@@ -11,7 +11,6 @@ import public_data from '../data/github_data.js';
 import useMyData from '../hooks/useMyData.js';
 
 import topicOptions from '../data/topic.js';
-
 import { toSelect } from '../utils/toSelect.js';
 import {
   throttled as createThrottled,

@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import { insertBefore, createAddBtn } from './utils/dom';
+
+import './utils/history.js';
+import './style/Dark.scss';
 
 import './style/App.scss';
-import './utils/history.js';
-
-import {insertBefore, createAddBtn} from './utils/dom';
-
 import App from './App.js';
-import './style/Dark.scss';
+
 
 window.addEventListener('replaceState', function (e) {
   setTimeout(judgeUrl, 100);
@@ -39,14 +39,12 @@ var h1Eles;
 function getElements() {
   var mainEle = document.querySelector('main.relative.h-full.w-full'); //右边整体内容
   var chatGPTInforEle = document.querySelector('div.text-gray-800'); // 右边chatGPT内容（包括标题、Examples、Capabilities和Limitations)
-  var contentEle = mainEle != null ?  mainEle.querySelector('div.flex.flex-col') : null; // 右边容器用于放App
-  var chatGPTBtmEle = mainEle != null ?  mainEle.querySelector('.flex-shrink-0') : null ; // 右边底部区域
-  var editBtns = mainEle != null ?  mainEle.querySelectorAll(".p-1.rounded-md") : null;
+  var contentEle = mainEle != null ? mainEle.querySelector('div.flex.flex-col') : null; // 右边容器用于放App
+  var chatGPTBtmEle = mainEle != null ? mainEle.querySelector('.flex-shrink-0') : null; // 右边底部区域
+  var editBtns = mainEle != null ? mainEle.querySelectorAll(".p-1.rounded-md") : null; // 对话框的编辑按钮
 
+  var scrollEle = document.querySelector('.react-scroll-to-bottom--css-zgqss-1n7m0yu'); //右边滚动区域
 
-  var scrollEle = document.querySelector(
-    '.react-scroll-to-bottom--css-zgqss-1n7m0yu'
-  ); //右边滚动区域
   var groupEle = mainEle != null ? mainEle.querySelector('div.group.w-full.text-gray-800') : null;
 
   // 容错判断
@@ -161,10 +159,10 @@ function init() {
 
     // 初始化时
     if (mainEle == null) return;
-    
+
     //  chatGPT对话框
-    if (chatGPTInforEle == null) {        
-        return;
+    if (chatGPTInforEle == null) {
+      return;
     };
 
     if (contentEle == null) return;
@@ -173,18 +171,18 @@ function init() {
     if (judgePage(mainEle) == 'chat') {
       try {
         // observer && observer.disconnect();
-        editBtns.forEach((editBtn)=>{
+        editBtns.forEach((editBtn) => {
           // insertBefore(createAddBtn(), editBtn);
           $("<button class='addPrompt'>add</button>").insertBefore(editBtn);
           console.log("editBtn", editBtn);
         });
         isHaveTpl() && removeTpl();
-      } catch (e) {}
+      } catch (e) { }
       return;
     }
 
     // 如果是首页则展示模板列表
-    if ( isHaveTpl() == false && isTplCreating != true &&  isTplCreated == false && judgePage(mainEle) == 'index') {
+    if (isHaveTpl() == false && isTplCreating != true && isTplCreated == false && judgePage(mainEle) == 'index') {
       hideChatGPT();
       isTplCreating = true;
       // 创建卡片dom节点
@@ -196,16 +194,14 @@ function init() {
   };
   var config = {
     subtree: true,
-    childList: true,
+    childList: true
   };
-  // var rootEle = document.getElementById("__next");
 
   var { mainEle } = getElements();
   if (mainEle != null) {
     var Observer = new MutationObserver(callback);
     Observer.observe(mainEle, config);
   }
-
 
   callback();
 }

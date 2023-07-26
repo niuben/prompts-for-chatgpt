@@ -109,26 +109,28 @@ const App = ({ onDel, onHide }) => {
       <Template
         currentPrompt={currentPrompt}
         setPrompt={(prompt) => {
-          setPrompt(prompt);
           appPrompt = prompt;
+          setPrompt(prompt);
           setPlaceHolder(prompt);
         }}
       />
 
-      {/* <TabComponent>
-                <Template tabTitle="个人模板" currentPrompt={currentPrompt} setPrompt={(prompt) => {
-                    setPrompt(prompt);
-                    appPrompt = prompt;
-                    setPlaceHolder(prompt);
-                }} />
-                <Template tabTitle="公共模板" currentPrompt={currentPrompt} setPrompt={(prompt) => {
-                    setPrompt(prompt);
-                    appPrompt = prompt;
-                    setPlaceHolder(prompt);
-                }} />
-                <div tabTitle="个人模板" key="1">1</div>
-                <div tabTitle="公共模版" key="2">2</div>
-            </TabComponent> */}
+      {/* 
+        <TabComponent>
+            <Template tabTitle="个人模板" currentPrompt={currentPrompt} setPrompt={(prompt) => {
+                setPrompt(prompt);
+                appPrompt = prompt;
+                setPlaceHolder(prompt);
+            }} />
+            <Template tabTitle="公共模板" currentPrompt={currentPrompt} setPrompt={(prompt) => {
+                setPrompt(prompt);
+                appPrompt = prompt;
+                setPlaceHolder(prompt);
+            }} />
+            <div tabTitle="个人模板" key="1">1</div>
+            <div tabTitle="公共模版" key="2">2</div>
+          </TabComponent> 
+      */}
     </div>
   );
 };

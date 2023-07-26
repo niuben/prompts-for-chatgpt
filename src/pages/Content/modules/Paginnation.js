@@ -56,9 +56,8 @@ const Pagination = ({ itemsPerPage, currentPage, totalItems, paginate }) => {
           </li>
         ))} */}
         <li
-          className={`page-item ${
-            activePage === pageNumbers.length ? 'disabled' : ''
-          }`}
+          className={`page-item ${activePage === pageNumbers.length ? 'disabled' : ''
+            }`}
         >
           <span
             onClick={handleNextClick}
