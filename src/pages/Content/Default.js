@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import { insertBefore, createAddBtn } from './utils/dom';
-import { getElements, createPromptsEle, createAddPromptBtn, removeAddPromptBtn, getPromptsEle, removePrompts, hideChatGPT, showChatGPT } from "./modules/platform/chatGPT/dom";
-import { isIndexPage, isChatPage } from "./modules/platform/chatGPT/page";
-import { onSendMessage} from "./modules/platform/chatGPT/listener";
+import { getElements, createPromptsEle, createAddPromptBtn, removeAddPromptBtn, getPromptsEle, removePrompts, hideChatGPT, showChatGPT } from "./platform/chatGPT/dom";
+import { isIndexPage, isChatPage } from "./platform/chatGPT/page";
+import { onSendMessage} from "./platform/chatGPT/listener";
 
 import './utils/history.js';
 import './style/App.scss';

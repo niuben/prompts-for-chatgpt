@@ -8,7 +8,6 @@ export function getElements() {
         chatGPTInforEle: $("div.text-gray-800"),
         contentEle: mainEle != null ? $(mainEle).find('div.flex.flex-col') : null,
         chatGPTBtmEle: mainEle != null ? $(mainEle).find('.flex-shrink-0') : null,
-        // editBtns: mainEle != null ? mainEle.find(".text-gray-400.flex.self-end").find("button.p-1.rounded-md") : null
         editBtns: mainEle != null ? $(mainEle).find(".group.w-full").even().find("button.p-1.rounded-md") : null
     }
 }
@@ -63,3 +62,16 @@ export function hideChatGPT() {
     var { chatGPTInforEle } = getElements();
     $(chatGPTInforEle).hide();
 }
+
+
+// 给chatGPT textarea 设置placeholder
+export function setPlaceHolder(prompt) {
+     
+    // 获取textarea节点
+    let textareaEle = $('form.stretch textarea');
+    $(textareaEle).attr(
+        'placeholder',
+        prompt != null ? prompt.placeholder : 'Send a message.'
+    );
+    $(textareaEle).focus();
+};

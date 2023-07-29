@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../style/Tab.scss'; // 引入样式文件
+import '@/style/Tab.scss'; // 引入样式文件
 
 const TemplateTab = () => {
   return <div className="tab-content">这是模版标签的内容</div>; // 使用tab-content类名

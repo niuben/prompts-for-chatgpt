@@ -1,13 +1,22 @@
-import fetchHook from '../utils/fetch-hook';
+import fetchHook from '@/utils/fetch-hook';
 
-import { getFromLocalStorage, saveToLocalStorage } from './utils/localStorage';
-import { PROMPTS_ID } from './utils/constant';
+import { getFromLocalStorage, saveToLocalStorage } from '@/utils/localStorage';
+import { PROMPTS_ID } from '@/utils/constant';
+import { insertNumberToFront } from '@/utils/utils';
 
-// l
-export function proxyFetch(appPrompt) {
+
+var appPrompt = "";
+
+// 
+export function setAppPrompt(val){
+    appPrompt = val;
+}
+
+//代理chatGPT自身fetch请求
+
+function proxyFetch() {
 
     fetchHook((url, options) => {
-        console.log('fetchHook!!!!');
 
         // 判断是否对话
         if (url.indexOf('conversation') == -1) {
@@ -21,14 +30,12 @@ export function proxyFetch(appPrompt) {
 
         console.log('conversation');
 
-        /*
-        * 提交prompt的id存到storage中;
-        */
+        // 提交prompt的id存到storage中;
         if (appPrompt != null) {
-            var promptsID = getFromLocalStorage(PROMPTS_ID) == null
-                ? [appPrompt.id]
-                : insertNumberToFront(appPrompt.id, promptsID);
-
+            var promptsID = getFromLocalStorage(PROMPTS_ID);
+            promptsID =  promptsID == null
+            ? [appPrompt.id]
+            : insertNumberToFront(appPrompt.id, promptsID);
             saveToLocalStorage(PROMPTS_ID, promptsID);
         }
 
@@ -56,7 +63,8 @@ export function proxyFetch(appPrompt) {
         } catch (e) {
             console.log('error', e);
         }
-
         return options;
     });
 }
+
+proxyFetch();

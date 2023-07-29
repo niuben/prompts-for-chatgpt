@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import '../style/Pagination.scss';
+import '@/style/Pagination.scss';
 
 const Pagination = ({ itemsPerPage, currentPage, totalItems, paginate }) => {
   const [activePage, setActivePage] = useState(currentPage);

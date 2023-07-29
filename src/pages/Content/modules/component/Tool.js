@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../style/Tool.scss';
+import '@/style/Tool.scss';
 // import Tone from "../data/tone.js";
 // import WritingStyle from "../data/writingstyle.js"
 

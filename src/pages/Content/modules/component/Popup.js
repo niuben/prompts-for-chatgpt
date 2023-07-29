@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../style/Popup.scss'; // 导入组件的样式文件
-import useMyData from '../hooks/useMyData';
+import '@/style/Popup.scss'; // 导入组件的样式文件
+import useMyData from '@/hooks/useMyData';
 
 const Popup = ({ onClose, onSave }) => {
   const [title, setTitle] = useState('');

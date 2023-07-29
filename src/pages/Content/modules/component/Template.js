@@ -5,19 +5,19 @@ import Pagination from './Paginnation.js';
 import Select from './Select.js';
 
 import Tab from './Tab.js';
-import Popup from './Popup';
+import Popup from './Popup.js';
 
-import public_data from '../data/github_data.js';
-import useMyData from '../hooks/useMyData.js';
+import public_data from '@/data/github_data.js';
+import useMyData from '@/hooks/useMyData.js';
 
-import topicOptions from '../data/topic.js';
-import { toSelect } from '../utils/toSelect.js';
+import topicOptions from '@/data/topic.js';
+import { toSelect } from '@/utils/toSelect.js';
 import {
   throttled as createThrottled,
   rangeObjectsById,
-} from '../utils/utils.js';
-import { getFromLocalStorage } from '../utils/localStorage';
-import { PROMPTS_ID } from '../utils/constant';
+} from '@/utils/utils.js';
+import { getFromLocalStorage } from '@/utils/localStorage';
+import { PROMPTS_ID } from '@/utils/constant';
 
 // import Toast from "./Toast";
 var handle;
