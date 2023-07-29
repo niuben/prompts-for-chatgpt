@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import { insertBefore, createAddBtn } from './utils/dom';
-import { getElements, createTplEle, getTplEle, removeTpl, hideChatGPT, showChatGPT } from "./modules/platform/chatGPT/dom";
+import { getElements, createPromptsEle, createAddPromptBtn, getPromptsEle, removePrompts, hideChatGPT, showChatGPT } from "./modules/platform/chatGPT/dom";
 import { isIndexPage, isChatPage } from "./modules/platform/chatGPT/page";
+import { onSend} from "./modules/platform/chatGPT/listener";
 
 import './utils/history.js';
 import './style/App.scss';
@@ -18,11 +19,11 @@ function createApp() {
       isAppExist = false;
     }}
       onHide={() => {
-        removeTpl();
+        removePrompts();
         showChatGPT();
       }}
     />,
-    getTplEle()[0],
+    getPromptsEle()[0],
     () => {
       // fn && fn();
     }
@@ -32,31 +33,23 @@ function createApp() {
 
 ["replaceState", "pushState", "load"].forEach((eventName) => {
   window.addEventListener(eventName, function (e) {
+    
     if (isIndexPage()) {
       createApp();
-      hideChatGPT();
+      hideChatGPT();      
     }
 
     if (isChatPage()) {
-      let { mainEle } = getElements();
-      let fn = function () {
-        var { editBtns } = getElements();
-        editBtns.each((index, editBtn) => {
-          $("<button class='addPrompt'>add</button>").insertBefore(editBtn);
-          console.log("editBtn", editBtn);
-        });
-      }
-      fn();
-
-      // let config = {
-      //   subtree: true,
-      //   childList: true
-      // };
-      // let Observer = new MutationObserver(fn);
-      // Observer.observe(mainEle[0], config);
+      createAddPromptBtn();      
     }
+  
+    onSend((event)=>{      
+      removePrompts();
+    });
+
   })
 });
+
 
 
 
@@ -144,7 +137,7 @@ function createApp() {
 //   }
 // }
 
-// function createTpl(fn) {
+// function createPrompts(fn) {
 //   var { chatGPTBtmEle, contentEle } = getElements();
 //   var appEle = document.createElement('div');
 //   appEle.setAttribute('id', 'chatGTP_prompts');
@@ -157,7 +150,7 @@ function createApp() {
 //         isAppExist = false;
 //       }}
 //       onHide={() => {
-//         removeTpl();
+//         removePrompts();
 //         showChatGPT();
 //         // console.log("onHide");
 //       }}
@@ -168,7 +161,7 @@ function createApp() {
 //     }
 //   );
 // }
-// function removeTpl() {
+// function removePrompts() {
 //   var promptsTemplate = document.getElementById('chatGTP_prompts');
 //   if (promptsTemplate != null) {
 //     promptsTemplate.remove();
@@ -187,7 +180,7 @@ function createApp() {
 //   chatGPTInforEle.style.display = 'block';
 // }
 
-// function isHaveTpl() {
+// function isHavePrompts() {
 //   return document.getElementById('chatGTP_prompts') != null;
 // }
 
@@ -195,8 +188,8 @@ function createApp() {
 //   console.log('init');
 
 //   // 判断App模块是否存在;
-//   var isTplCreating = false;
-//   var isTplCreated = false;
+//   var isPromptsCreating = false;
+//   var isPromptsCreated = false;
 
 //   var callback = function (mutationList, observer) {
 //     var { mainEle, chatGPTInforEle, contentEle, editBtns } = getElements();
@@ -221,19 +214,19 @@ function createApp() {
 //           $("<button class='addPrompt'>add</button>").insertBefore(editBtn);
 //           console.log("editBtn", editBtn);
 //         });
-//         isHaveTpl() && removeTpl();
+//         isHavePrompts() && removePrompts();
 //       } catch (e) { }
 //       return;
 //     }
 
 //     // 如果是首页则展示模板列表
-//     if (isHaveTpl() == false && isTplCreating != true && isTplCreated == false && judgePage(mainEle) == 'index') {
+//     if (isHavePrompts() == false && isPromptsCreating != true && isPromptsCreated == false && judgePage(mainEle) == 'index') {
 //       hideChatGPT();
-//       isTplCreating = true;
+//       isPromptsCreating = true;
 //       // 创建卡片dom节点
-//       createTpl(() => {
-//         isTplCreating = false;
-//         isTplCreated = true;
+//       createPrompts(() => {
+//         isPromptsCreating = false;
+//         isPromptsCreated = true;
 //       });
 //     }
 //   };

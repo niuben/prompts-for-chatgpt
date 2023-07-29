@@ -3,9 +3,6 @@ import $ from 'jquery';
 // 获取chatGPT网站各种dom节点
 export function getElements() {
     var mainEle = $('main.relative.h-full.w-full');
-
-    console.log("find", $(mainEle).find);
-
     return {
         mainEle: mainEle,
         chatGPTInforEle: $("div.text-gray-800"),
@@ -15,49 +12,52 @@ export function getElements() {
     }
 }
 
-export function createTplEle() {
+// 创建prompts dom元素，用于模板渲染
+export function createPromptsEle() {
     var { chatGPTBtmEle, contentEle } = getElements();
     $(contentEle).eq(0).append("<div id='chatGTP_prompts'></div>");
 }
 
-export function getTplEle() {
-
-    if ($("#chatGTP_prompts").length == 0) {
-        createTplEle();
-    }
-    return $("#chatGTP_prompts");
-
-    // var { chatGPTBtmEle, contentEle } = getElements();
-    // $(chatGPTBtmEle).insertBefore("<div id='chatGTP_prompts'></div>")
-    // var appEle = document.createElement('div');
-    // appEle.setAttribute('id', 'chatGTP_prompts');
-    // // contentEle.appendChild(appEle);
-    // contentEle.insertBefore(appEle, chatGPTBtmEle);
+// 创建添加prompt dom按钮，点击按钮展示创建弹出框
+export function createAddPromptBtn(){
+    var { editBtns } = getElements();
+    editBtns.each((index, editBtn) => {
+        $("<button class='addPrompt'>add</button>").insertBefore(editBtn);
+        console.log("editBtn", editBtn);
+    });
 }
 
-//
-export function removeTpl() {
+// 获取prompts dom元素，用于模板渲染
+export function getPromptsEle() {
+    if ($("#chatGTP_prompts").length == 0) {
+        createPromptsEle();
+    }
+    return $("#chatGTP_prompts");
+}
+
+// 移除prompts模板
+export function removePrompts() {
     var promptsTemplate = $('#chatGTP_prompts');
-    // if (promptsTemplate != null) {
-    //   promptsTemplate.remove();
-    // }
     $('#chatGTP_prompts').remove();
 }
 
-export function isHaveTpl() {
+// 判断是否有prompts模板
+export function isHavePrompts() {
     return $('#chatGTP_prompts').length == 1;
 }
 
+// 展示首页 chatGPT information 
+export function showChatGPT() {
+    var { chatGPTInforEle } = getElements();
+    $(chatGPTInforEle).show();
+}
 
+// 隐藏首页 chatGPT information
 export function hideChatGPT() {
     var { chatGPTInforEle } = getElements();
     $(chatGPTInforEle).hide();
 }
 
-export function showChatGPT() {
-    var { chatGPTInforEle } = getElements();
-    $(chatGPTInforEle).show();
-}
 
 
 
