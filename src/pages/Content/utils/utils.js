@@ -15,26 +15,7 @@ export function throttled(fn, delay) {
     }
   };
 }
-/*
-* 将objectsArray对象数组按照，把idsArray中数据排在最前面;
-* const ids = [2, 4, 6];
-    const objects = [
-    { id: 1, name: 'Object 1' },
-    { id: 2, name: 'Object 2' },
-    { id: 3, name: 'Object 3' },
-    { id: 4, name: 'Object 4' },
-    { id: 5, name: 'Object 5' },
-    ];
 
-    [
-    { id: 2, name: 'Object 2' },
-    { id: 4, name: 'Object 4' },
-    { id: 1, name: 'Object 1' },
-    { id: 3, name: 'Object 3' },
-    { id: 5, name: 'Object 5' }
-    ]
-    给符合对象传递fn 
-*/
 export function rangeObjectsById(idsArray, objectsArray, fn) {
   const rearrangedArray = [];
 
@@ -72,12 +53,12 @@ console.log(newArray); // 输出: [3, 2, 4, 5]
 * 
 */
 
-export function insertNumberToFront(number, array) {
+export function insertNumberToFront(number, array) {  
   // 检查数组中是否已经存在该数字
   const index = array.indexOf(number);
 
+  // 如果数组中已经存在该数字，则删除之前的数字
   if (index !== -1) {
-    // 如果数组中已经存在该数字，则删除之前的数字
     array.splice(index, 1);
   }
 

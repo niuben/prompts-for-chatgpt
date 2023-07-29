@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import { insertBefore, createAddBtn } from './utils/dom';
-import { getElements, createPromptsEle, createAddPromptBtn, getPromptsEle, removePrompts, hideChatGPT, showChatGPT } from "./modules/platform/chatGPT/dom";
+import { getElements, createPromptsEle, createAddPromptBtn, removeAddPromptBtn, getPromptsEle, removePrompts, hideChatGPT, showChatGPT } from "./modules/platform/chatGPT/dom";
 import { isIndexPage, isChatPage } from "./modules/platform/chatGPT/page";
-import { onSend} from "./modules/platform/chatGPT/listener";
+import { onSendMessage} from "./modules/platform/chatGPT/listener";
 
 import './utils/history.js';
 import './style/App.scss';
@@ -35,19 +35,29 @@ function createApp() {
   window.addEventListener(eventName, function (e) {
     
     if (isIndexPage()) {
-      createApp();
-      hideChatGPT();      
+      setTimeout(() => {
+        createApp();
+        hideChatGPT();  
+      }, 1000);    
     }
 
     if (isChatPage()) {
-      createAddPromptBtn();      
+      setTimeout(() => {
+        removeAddPromptBtn()
+        createAddPromptBtn();               
+      }, 1000);
     }
   
-    onSend((event)=>{      
+    //绑定发送信息事件
+    onSendMessage((event)=>{      
       removePrompts();
-    });
+      setTimeout(()=>{
+        createAddPromptBtn();
+      }, 1000);
+    })
 
   })
+
 });
 
 

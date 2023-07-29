@@ -2,7 +2,7 @@
 
 import $ from "jquery";
 
-export function onSend(callback){
+export function onSendMessage(callback){
     
     // 判断是否存在
     if($("#prompt-textarea").length == 0) return;
