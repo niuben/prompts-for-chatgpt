@@ -1,7 +1,7 @@
+import React, { useEffect, useState } from 'react';
 
+const My = ({ onSetPrompt, promps}) => {
+    return <div>my</div>;   
+}
 
-
-export const My = ({ onSetPrompt, promps}) => {
-
-    
-})
+export default My;

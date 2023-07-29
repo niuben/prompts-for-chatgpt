@@ -28,7 +28,7 @@ const Template = ({ currentPrompt, setPrompt, onOpenPopup }) => {
   const [pageLimite, setPageLimite] = useState(16);
   const [topic, setTopic] = useState('全部');
   const [query, setQuery] = useState('');
-  var [popupStatus, setPopupStatus] = useState(false);
+  
 
   const [myData, addMyData, updateMyData, removeMyData] = useMyData();
 
@@ -243,17 +243,7 @@ const Template = ({ currentPrompt, setPrompt, onOpenPopup }) => {
       {/* <Tool getPrompt={getPrompt} id={id} onEntry={(prompt) => {
                 // copy(prompt);
             }} /> */}
-      {popupStatus && (
-        <Popup
-          onClose={() => {
-            setPopupStatus(false);
-          }}
-          onSave={() => {
-            updateMyData();
-            setTemplateName('my');
-          }}
-        />
-      )}
+     
     </div>
   );
 };

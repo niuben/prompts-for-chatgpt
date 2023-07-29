@@ -63,10 +63,8 @@ export function hideChatGPT() {
     $(chatGPTInforEle).hide();
 }
 
-
 // 给chatGPT textarea 设置placeholder
-export function setPlaceHolder(prompt) {
-     
+export function setPlaceHolder(prompt) {     
     // 获取textarea节点
     let textareaEle = $('form.stretch textarea');
     $(textareaEle).attr(

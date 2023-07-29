@@ -9,53 +9,67 @@ import './style/Input.scss';
 import './style/Tool.scss';
 import './style/Tab.scss';
 
-import Template from './modules/component/Template';
-import TabComponent from './modules/component/TabComponent';
+import Template from './component/Template';
+import Tab from './component/Tab';
+import Popup from './component/Popup';
+// import TabComponent from './modules/component/TabComponent';
+
+import My from "./modules/my";
+import Public from "./modules/public";
 
 import {setPlaceHolder} from "./platform/chatGPT/dom";
 import {setAppPrompt} from "./platform/chatGPT/proxyFetch";
 
 const App = ({ onDel, onHide }) => {
   var [prompt, setPrompt] = useState({ id: -1 });
+  var [popupStatus, setPopupStatus] = useState(false);
   // 是否移除prompts模板，模板只移除一次;
 
   return (
     <div className="outerWrap">
-      <div
-        className="close-button"
-        href="javascript:void(0)"
-        onClick={() => {
-          setPrompt(null);
-          setAppPrompt(null);
-          setPlaceHolder(null);
-          onHide && onHide();
-        }}
-      ></div>
-      <Template
+      <div className="mainInner">
+        <h2 className="title">ChatGPT 提示词</h2>
+        <div
+          className="close-button"
+          href="javascript:void(0)"
+          onClick={() => {
+            setPrompt(null);
+            setAppPrompt(null);
+            setPlaceHolder(null);
+            onHide && onHide();
+          }}
+        ></div>
+      {/* <Template
         pompt={prompt}
         setPrompt={(prompt) => {
           setPrompt(prompt);
           setAppPrompt(prompt);
           setPlaceHolder(prompt);
         }}
-      />
+      /> */}
+      <Tab>        
+        <My name="我的" />
+        <Public name="公共模板" />
+      </Tab>
+      {/* <TabComponent>
 
-      {/* 
-        <TabComponent>
-            <Template tabTitle="个人模板" pompt={prompt} setPrompt={(prompt) => {
-                setPrompt(prompt);
-                appPrompt = prompt;
-                setPlaceHolder(prompt);
-            }} />
-            <Template tabTitle="公共模板" pompt={prompt} setPrompt={(prompt) => {
-                setPrompt(prompt);
-                appPrompt = prompt;
-                setPlaceHolder(prompt);
-            }} />
-            <div tabTitle="个人模板" key="1">1</div>
-            <div tabTitle="公共模版" key="2">2</div>
-          </TabComponent> 
-      */}
+      
+
+      </TabComponent> */}
+
+
+      {popupStatus && (
+        <Popup
+          onClose={() => {
+            setPopupStatus(false);
+          }}
+          onSave={() => {
+            updateMyData();
+            setTemplateName('my');
+          }}
+        />
+      )}
+      </div>  
     </div>
   );
 };

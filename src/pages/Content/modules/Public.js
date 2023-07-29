@@ -1,6 +1,7 @@
+import React, { useEffect, useState } from 'react';
 
+const Public = ({ onSetPrompt, promps}) => {
+    return <div>Public</div>;
+}
 
-export const Public = ({ onSetPrompt, promps}) => {
-
-    
-})
+export default Public;
