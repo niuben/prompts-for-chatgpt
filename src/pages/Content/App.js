@@ -47,17 +47,14 @@ const App = ({ onDel, onHide }) => {
           setPlaceHolder(prompt);
         }}
       /> */}
+
       <Tab>        
         <My name="我的" />
         <Public name="公共模板" />
       </Tab>
       {/* <TabComponent>
 
-      
-
       </TabComponent> */}
-
-
       {popupStatus && (
         <Popup
           onClose={() => {

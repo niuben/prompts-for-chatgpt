@@ -4,8 +4,8 @@ import React, { useRef, useEffect, useState, createElement } from 'react';
 import Pagination from './Paginnation.js';
 import Select from './Select.js';
 
-import Tab from './Tab.js';
-import Popup from './Popup.js';
+// import Tab from './Tab.js';
+// import Popup from './Popup.js';
 
 import public_data from '@/data/github_data.js';
 import useMyData from '@/hooks/useMyData.js';

@@ -32,14 +32,12 @@ const TabComponent = ({ children, templateName, onChange }) => {
             </button>
           )
         )}   
-      </div>
-      <div className='tab-content'>
+      </div>      
         {
           children.map((child, index) => {
               if(tabIndex == index) return child;
           })
         }
-      </div>
     </div>
   );
 };
