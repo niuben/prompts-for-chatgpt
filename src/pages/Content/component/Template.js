@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, createElement } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 // import data from "./data/data.js"
 import Pagination from './Paginnation.js';
@@ -7,7 +7,7 @@ import Select from './Select.js';
 // import Tab from './Tab.js';
 // import Popup from './Popup.js';
 
-import public_data from '@/data/github_data.js';
+
 import useMyData from '@/hooks/useMyData.js';
 
 import topicOptions from '@/data/topic.js';
@@ -92,16 +92,7 @@ const Template = ({ currentPrompt, setPrompt, onOpenPopup }) => {
     return data.slice(start, end);
   };
 
-  var getPrompt = function (_id) {
-    var promptArr = data.filter((prompt, index) => prompt.id == _id);
-
-    //暂时用index代替
-    // var promptArr = data.filter((prompt, index) => index == _id);
-    if (typeof promptArr == 'object' && promptArr.length == 1) {
-      return promptArr[0];
-    }
-    return null;
-  };
+  
 
   var resetPrompt = function () {
     // setId(null);
@@ -189,7 +180,7 @@ const Template = ({ currentPrompt, setPrompt, onOpenPopup }) => {
                   // setId(prompt.id);
                   setPrompt(prompt);
                 } else {
-                  resetPrompt();
+                  resetPrompt(null);
                 }
               }}
             >
