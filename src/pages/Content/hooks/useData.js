@@ -45,9 +45,16 @@ function getSearchData(data, query){
     return searchData;
 }
 
+// 获取当前数据
+export function getCurrentData(data, page, pageLimite) {
+    // var totalData = getTotalData();
+    var start = page * pageLimite;
+    var end = start + pageLimite;
+    return data.slice(start, end);
+}
 
-
-export const useAllData = (initData)=> {
+let useAllData;
+export default useAllData = (initData)=> {
   
     // 把使用过数据排在最前面
     var rangeData = setRangeData(initData);

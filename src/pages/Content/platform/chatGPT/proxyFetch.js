@@ -1,7 +1,7 @@
 import fetchHook from '@/utils/fetch-hook';
 
 import { getFromLocalStorage, saveToLocalStorage } from '@/utils/localStorage';
-import { PROMPTS_ID } from '@/utils/constant';
+import { PROMPTS_ID } from '@/hooks/constant';
 import { insertNumberToFront } from '@/utils/utils';
 
 

@@ -12,8 +12,17 @@ import React, { useState } from 'react';
 
 }]
 */
-export default function Select({ options, title, defaultValue, onChange }) {
+import topicOptions from '@/data/topic.js';
+import { toSelect } from '@/utils/toSelect.js';
+
+
+export default function Select({ title, defaultValue, onChange }) {
   const [dropdownValue, setDropdownValue] = useState(defaultValue);
+
+  var options = toSelect(topicOptions, {
+    key: 'name',
+    val: 'name',
+  });
 
   return (
     <div className="dropdown-container left">
