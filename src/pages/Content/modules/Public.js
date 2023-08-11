@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import public_data from '@/data/github_data.js';
 import useData from '@/hooks/useData.js';
+import 
 
 import Toolbar from "@/component/ToolBar.js";
 import Template from '@/component/Template';
@@ -18,7 +19,7 @@ const Public = () => {
             }} onSelectTopic={(topic) => {
                 setTopicData(topic);
             }} />
-            <Template data={data} onChoosePrompt={() => {
+            <Template data={data} onChoosePrompt={(prompt) => {
 
             }} />
         </div>)
