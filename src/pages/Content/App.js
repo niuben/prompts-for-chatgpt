@@ -17,8 +17,8 @@ import Popup from './component/Popup';
 import My from "./modules/my";
 import Public from "./modules/public";
 
-import {setPlaceHolder} from "./platform/chatGPT/dom";
-import {setAppPrompt} from "./platform/chatGPT/proxyFetch";
+import { setPlaceHolder } from "./platform/chatGPT/dom";
+import { setAppPrompt } from "./platform/chatGPT/proxyFetch";
 
 const App = ({ onDel, onHide }) => {
   var [prompt, setPrompt] = useState({ id: -1 });
@@ -29,7 +29,7 @@ const App = ({ onDel, onHide }) => {
     <div className="outerWrap">
       <div className="mainInner">
         <h2 className="title">ChatGPT 提示词</h2>
-        <div
+        {/* <div
           className="close-button"
           href="javascript:void(0)"
           onClick={() => {
@@ -38,8 +38,8 @@ const App = ({ onDel, onHide }) => {
             setPlaceHolder(null);
             onHide && onHide();
           }}
-        ></div>
-      {/* <Template
+        ></div> */}
+        {/* <Template
         pompt={prompt}
         setPrompt={(prompt) => {
           setPrompt(prompt);
@@ -48,25 +48,25 @@ const App = ({ onDel, onHide }) => {
         }}
       /> */}
 
-      <Tab>        
-        <My name="我的" />
-        <Public name="公共模板" />
-      </Tab>
-      {/* <TabComponent>
+        <Tab>
+          <Public name="公共模板" />
+          <My name="我的" />
+        </Tab>
+        {/* <TabComponent>
       
       </TabComponent> */}
-      {popupStatus && (
-        <Popup
-          onClose={() => {
-            setPopupStatus(false);
-          }}
-          onSave={() => {
-            updateMyData();
-            setTemplateName('my');
-          }}
-        />
-      )}
-      </div>  
+        {popupStatus && (
+          <Popup
+            onClose={() => {
+              setPopupStatus(false);
+            }}
+            onSave={() => {
+              updateMyData();
+              setTemplateName('my');
+            }}
+          />
+        )}
+      </div>
     </div>
   );
 };
