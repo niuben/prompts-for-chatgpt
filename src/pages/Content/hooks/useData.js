@@ -4,7 +4,7 @@ import { rangeObjectsById } from '@/utils/utils.js';
 import { getFromLocalStorage } from '../utils/localStorage';
 
 // 将使用过模板放在最前面
-function getRangeData(data) {
+export function getRangeData(data) {
   // 将使用过模板放在最前面
   var prompts_id = getFromLocalStorage(PROMPTS_ID);
   if (prompts_id == null) prompts_id = [];
@@ -17,18 +17,19 @@ function getRangeData(data) {
 }
 
 // 设置分类数据
-function getTopicData(data, topic) {
+export function getTopicData(data, topic) {
+  
   let topicData = [];
   data.map((item) => {
-    if (item.topic == topic) {
+    if (item.topic == topic || topic == "全部") {
       topicData.push(item);
     }
   });
-  return data;
+  return topicData;
 }
 
 // 设置搜索数据
-function getSearchData(data, query) {
+export function getSearchData(data, query) {
   var searchData = data;
   if (query != '' && query != undefined) {
     searchData = [];
@@ -61,13 +62,14 @@ export default useAllData = (initData) => {
   var rangeData = getRangeData(initData);
   var [data, setData] = useState(rangeData);
 
+
   // 设置
   let setTopicData = function (topic) {
     let topicData = getTopicData(rangeData, topic);
     setData(topicData);
   }
 
-  let setSearchData = function (query) {
+  let setSearchData = function (query, topic) {
     let topicData = getTopicData(rangeData, topic);
     let searchData = getSearchData(topicData, query);
     setData(searchData);

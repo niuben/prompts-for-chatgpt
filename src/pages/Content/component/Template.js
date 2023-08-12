@@ -11,10 +11,7 @@ const Template = ({ data, currentPrompt, onChoosePrompt, isDelete, onDelete }) =
   const [pageLimite, setPageLimite] = useState(16);
 
   // 事件联动
-
-  // const [isToast, setToast] = useState(false);
-  // const mainInnerRef = useRef();
-
+  
   //截取文字
   var substr = function (str, length) {
     if (typeof str != 'string') {

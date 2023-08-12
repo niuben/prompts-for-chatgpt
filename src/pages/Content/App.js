@@ -2,20 +2,18 @@ import React, { useEffect, useState } from 'react';
 
 import './style/Common.scss';
 import './style/App.scss';
-import './style/pagination.scss';
 import './style/Close.scss';
 import './style/Icon.scss';
 import './style/Input.scss';
 import './style/Tool.scss';
 import './style/Tab.scss';
 
-import Template from './component/Template';
 import Tab from './component/Tab';
 import Popup from './component/Popup';
 // import TabComponent from './modules/component/TabComponent';
 
-import My from "./modules/my";
-import Public from "./modules/public";
+import My from "./modules/My";
+import Public from "./modules/Public";
 
 import { setPlaceHolder } from "./platform/chatGPT/dom";
 import { setAppPrompt } from "./platform/chatGPT/proxyFetch";

@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import '@/style/Tool.scss';
 import Select from './Select.js';
 
-var DropdownsAndInput = ({isSelect,  isSearch, onSelectTopic, onSearch }) => {
+let handle;
+let DropdownsAndInput = ({isSelect,  isSearch, onSelectTopic, onSearch }) => {
   const [topic, setTopic] = useState('全部');
   const [query, setQuery] = useState('');
-  
 
   return (
     <div className="toolbar">      
@@ -13,10 +13,11 @@ var DropdownsAndInput = ({isSelect,  isSearch, onSelectTopic, onSearch }) => {
         <Select
           title="分类"
           default={'全部'}
-          onChange={(value) => {
-            console.log('value', value);
-            setTopic(value);
-            setPage(0);
+          onChange={(topic) => {
+            console.log('topic', topic);
+            setTopic(topic);
+            onSelectTopic(topic);
+            // setPage(0);
           }}
         />
       )}
@@ -34,13 +35,14 @@ var DropdownsAndInput = ({isSelect,  isSearch, onSelectTopic, onSearch }) => {
           placeholder="搜索"
           className="right mr20"
           onChange={(e) => {
-            var val = e.target.value;
+            var query = e.target.value;
             if (handle != undefined) {
               clearTimeout(handle);
               handle = undefined;
             }
             handle = setTimeout(() => {
-              setQuery(val);
+              setQuery(query);
+              onSearch(query, topic)
               handle == undefined;
             }, 150);
           }}
