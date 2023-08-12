@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '@/style/Tool.scss';
 import Select from './Select.js';
+import emitter from "@/utils/emitter.js";
 
 let handle;
 let DropdownsAndInput = ({isSelect,  isSearch, onSelectTopic, onSearch }) => {
@@ -17,6 +18,7 @@ let DropdownsAndInput = ({isSelect,  isSearch, onSelectTopic, onSearch }) => {
             console.log('topic', topic);
             setTopic(topic);
             onSelectTopic(topic);
+            emitter.emitEvent("onSelectTopic")
             // setPage(0);
           }}
         />
@@ -42,7 +44,8 @@ let DropdownsAndInput = ({isSelect,  isSearch, onSelectTopic, onSearch }) => {
             }
             handle = setTimeout(() => {
               setQuery(query);
-              onSearch(query, topic)
+              onSearch(query, topic);
+              emitter.emitEvent("onSearch");
               handle == undefined;
             }, 150);
           }}

@@ -13,6 +13,7 @@
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
   "dependencies": {
+    "ev-emitter": "^2.1.2",
     "jquery": "^3.7.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

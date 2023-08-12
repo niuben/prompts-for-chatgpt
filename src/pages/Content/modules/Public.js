@@ -6,6 +6,13 @@ import useData, {getSearchData, getRangeData, getTopicData} from '@/hooks/useDat
 import Toolbar from "@/component/ToolBar.js";
 import Template from '@/component/Template';
 
+import emitter from "@/utils/emitter.js";
+
+emitter.on("pagination", (a, b, c) => {
+    console.log("pagination", a, b, c);
+})
+
+emitter.emitEvent("pagination", [1, 2, 3]);
 
 const Public = ({ currentPrompt, onSetPrompt }) => {
     // 用于数据操作

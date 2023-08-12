@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { getCurrentData } from "@/hooks/useData";
 import Pagination from './Paginnation.js';
+import emitter from "@/utils/emitter.js";
 
 // import Toast from "./Toast";
 var handle;
@@ -11,6 +12,15 @@ const Template = ({ data, currentPrompt, onChoosePrompt, isDelete, onDelete }) =
   const [pageLimite, setPageLimite] = useState(16);
 
   // 事件联动
+  emitter.once("onSearch", () => {
+    setPage(0);
+  })
+
+  emitter.once("onSelectTopic", () => {
+    setPage(0);
+  })
+
+
   
   //截取文字
   var substr = function (str, length) {
@@ -88,7 +98,6 @@ const Template = ({ data, currentPrompt, onChoosePrompt, isDelete, onDelete }) =
           currentPage={page}
           totalItems={data.length}
           paginate={(page) => {
-            console.log('page', page);
             setPage(page);
           }}
         />

@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
 import '@/style/Pagination.scss';
+
+
 
 const Pagination = ({ itemsPerPage, currentPage, totalItems, paginate }) => {
   const [activePage, setActivePage] = useState(currentPage);
+
+  useEffect(()=>{
+    setActivePage(currentPage);
+  }, [currentPage])
+  
 
   const pageNumbers = [];
   for (let i = 1; i <= Math.floor(totalItems / itemsPerPage); i++) {
@@ -30,8 +36,8 @@ const Pagination = ({ itemsPerPage, currentPage, totalItems, paginate }) => {
   };
 
   return (
-    <nav>
-      <ul className="pagination">
+    <nav className="pagination">
+      <ul className="pagination-inner">
         {/* <li>{currentPage * itemsPerPage + "/" + totalItems}</li> */}
         <li>{currentPage + 1 + '/' + (pageNumbers.length + 1)}</li>
         <li className={`page-item ${activePage === 0 ? 'disabled' : ''}`}>

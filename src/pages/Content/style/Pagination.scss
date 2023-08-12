@@ -1,4 +1,10 @@
-.pagination {
+nav.pagination {
+  height: 30px;
+}
+
+.pagination-inner {
+  margin-top: 15px;
+  margin-right: 0.6rem;
   float: right;
   display: flex;
   justify-content: center;
