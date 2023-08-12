@@ -7,7 +7,7 @@ import Toolbar from "@/component/ToolBar.js";
 import Template from '@/component/Template';
 
 
-const My = () => {
+const My = ({ currentPrompt, onSetPrompt }) => {
 
     // 用于个人信息增删操作
     const [myData, addMyData, updateMyData, removeMyData] = useMyData();
@@ -22,7 +22,7 @@ const My = () => {
             }} onSelectTopic={(topic) => {
                 setTopicData(topic);
             }} />
-            <Template data={data} />
+            <Template currentPrompt={currentPrompt} data={data} />
         </div>)
 };
 

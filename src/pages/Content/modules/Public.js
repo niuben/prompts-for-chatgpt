@@ -2,13 +2,11 @@ import React, { useEffect, useState } from 'react';
 
 import public_data from '@/data/github_data.js';
 import useData from '@/hooks/useData.js';
-import 
 
 import Toolbar from "@/component/ToolBar.js";
 import Template from '@/component/Template';
 
-
-const Public = () => {
+const Public = ({ currentPrompt, onSetPrompt }) => {
     // 用于数据操作
     const [data, setTopicData, setSearchData] = useData(public_data);
 
@@ -19,8 +17,8 @@ const Public = () => {
             }} onSelectTopic={(topic) => {
                 setTopicData(topic);
             }} />
-            <Template data={data} onChoosePrompt={(prompt) => {
-
+            <Template data={data} currentPrompt={prompt} onChoosePrompt={(prompt) => {
+                onSetPrompt(prompt)
             }} />
         </div>)
 };

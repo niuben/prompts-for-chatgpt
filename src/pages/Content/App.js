@@ -47,10 +47,17 @@ const App = ({ onDel, onHide }) => {
           setPlaceHolder(prompt);
         }}
       /> */}
-
         <Tab>
-          <Public name="公共模板" />
-          <My name="我的" />
+          <Public name="公共模板" currentPrompt={prompt} onSetPrompt={(prompt) => {
+            setPrompt(prompt);
+            setAppPrompt(prompt);
+            setPlaceHolder(prompt);
+          }} />
+          <My name="我的" currentPrompt={prompt} onSetPrompt={(prompt) => {
+            setPrompt(prompt);
+            setAppPrompt(prompt);
+            setPlaceHolder(prompt);
+          }} />
         </Tab>
         {/* <TabComponent>
       
