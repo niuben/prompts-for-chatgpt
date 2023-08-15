@@ -28,7 +28,7 @@ var compiler = webpack(config);
 var server = new WebpackDevServer(
   {
     https: true,
-    // hot: true,
+    hot: true,
     liveReload: true,
     client: {
       webSocketTransport: 'sockjs',
@@ -47,6 +47,12 @@ var server = new WebpackDevServer(
       'Access-Control-Allow-Origin': '*',
     },
     allowedHosts: 'all',
+    https: {
+      // key: path.resolve(__dirname, 'ssl', 'localhost.key'),
+      // cert: path.resolve(__dirname, 'ssl', 'localhost.crt'),
+      key: './ssl/localhost.key',
+      cert: './ssl/localhost.crt'
+    }
   },
   compiler
 );
