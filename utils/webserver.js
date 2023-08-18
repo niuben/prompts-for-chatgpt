@@ -7,7 +7,10 @@ var WebpackDevServer = require('webpack-dev-server'),
   webpack = require('webpack'),
   config = require('../webpack.config'),
   env = require('./env'),
-  path = require('path');
+  path = require('path'),
+  fs = require('fs'),
+  mkcert = require('mkcert');
+
 
 var options = config.chromeExtensionBoilerplate || {};
 var excludeEntriesToHotReload = options.notHotReload || [];
@@ -23,13 +26,28 @@ for (var entryName in config.entry) {
 
 delete config.chromeExtensionBoilerplate;
 
-var compiler = webpack(config);
+// create a certificate authority
+// const ca = await mkcert.createCA({
+//   organization: 'Hello CA',
+//   countryCode: 'NP',
+//   state: 'Bagmati',
+//   locality: 'Kathmandu',
+//   validityDays: 365
+// });
 
+// // then create a tls certificate
+// const cert = await mkcert.createCert({
+//   domains: ['127.0.0.1', 'localhost'],
+//   validityDays: 365,
+//   caKey: ca.key,
+//   caCert: ca.cert
+// });
+
+var compiler = webpack(config);
 var server = new WebpackDevServer(
   {
-    https: true,
     hot: true,
-    liveReload: true,
+    liveReload: false,
     client: {
       webSocketTransport: 'sockjs',
     },
@@ -47,11 +65,15 @@ var server = new WebpackDevServer(
       'Access-Control-Allow-Origin': '*',
     },
     allowedHosts: 'all',
-    https: {
-      // key: path.resolve(__dirname, 'ssl', 'localhost.key'),
-      // cert: path.resolve(__dirname, 'ssl', 'localhost.crt'),
-      key: './ssl/localhost.key',
-      cert: './ssl/localhost.crt'
+    // server: "https"
+    server: {
+      type: "https",
+      options: {
+        key: path.resolve(__dirname, 'ssl', 'cert.key'),
+        crt: path.resolve(__dirname, 'ssl', 'cert.crt'),
+        passphrase: '123123',
+        requestCert: true
+      }
     }
   },
   compiler

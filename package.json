@@ -15,6 +15,7 @@
   "dependencies": {
     "ev-emitter": "^2.1.2",
     "jquery": "^3.7.0",
+    "mkcert": "^1.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
