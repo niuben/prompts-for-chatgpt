@@ -215,6 +215,15 @@ var options = {
       chunks: ['devtools'],
       cache: false,
     }),
+
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'copy', 'content.html'),
+      filename: 'content.html',
+      chunks: ['default'],
+      inject: "body",
+      cache: true
+    }),
+
     // new HtmlWebpackPlugin({
     //   template: path.join(__dirname, 'src', 'pages', 'Panel', 'index.html'),
     //   filename: 'panel.html',

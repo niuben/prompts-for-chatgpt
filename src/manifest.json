@@ -11,9 +11,16 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://chat.openai.com/*"],
-      "js": ["contentScript.bundle.js"],
-      "css": ["content.styles.css"]
+      "matches": [
+        "https://chat.openai.com/*",
+        "http://localhost:5500/*"
+      ],
+      "js": [
+        "contentScript.bundle.js"
+      ],
+      "css": [
+        "content.styles.css"
+      ]
     }
   ],
   "devtools_page": "devtools.html",
@@ -23,9 +30,12 @@
         "content.styles.css",
         "icon-128.png",
         "icon-34.png",
-        "default.bundle.js"
+        "default.bundle.js",
+        "chrome-extension://hhjcihjakanabopdbkhhcjmdingpapfe/default.bundle.js"
       ],
-      "matches": ["https://*/*"]
+      "matches": [
+        "https://*/*"
+      ]
     }
   ]
 }

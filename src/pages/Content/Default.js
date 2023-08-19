@@ -12,7 +12,6 @@ import './style/App.scss';
 import './style/Dark.scss';
 import App from './App.js';
 
-
 function createApp() {
   ReactDOM.render(
     <App onDel={() => {

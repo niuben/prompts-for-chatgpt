@@ -22,11 +22,11 @@ const App = ({ onDel, onHide }) => {
   var [prompt, setPrompt] = useState({ id: -1 });
   var [popupStatus, setPopupStatus] = useState(false);
   // 是否移除prompts模板，模板只移除一次;
-
+  
   return (
     <div className="outerWrap">
       <div className="mainInner">
-        <h2 className="title">ChatGPT 提示词</h2>
+        <h2 className="title">ChatGPT 提示词3333</h2>
         {/* <div
           className="close-button"
           href="javascript:void(0)"
@@ -66,6 +66,7 @@ const App = ({ onDel, onHide }) => {
               setPopupStatus(false);
             }}
             onSave={() => {
+              
               updateMyData();
               setTemplateName('my');
             }}

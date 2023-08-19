@@ -19,7 +19,8 @@ for (var entryName in config.entry) {
   if (excludeEntriesToHotReload.indexOf(entryName) === -1) {
     config.entry[entryName] = [
       'webpack/hot/dev-server',
-      `webpack-dev-server/client?hot=true&hostname=localhost&port=${env.PORT}`,
+      // `webpack-dev-server/client?hot=only&hostname=localhost&port=${env.PORT}`, 
+      `webpack-dev-server/client`, 
     ].concat(config.entry[entryName]);
   }
 }
@@ -42,14 +43,16 @@ delete config.chromeExtensionBoilerplate;
 //   caKey: ca.key,
 //   caCert: ca.cert
 // });
-
+console.log("config", config);
 var compiler = webpack(config);
 var server = new WebpackDevServer(
-  {
-    hot: true,
+  {    
+    https: false,
+    hot: 'only',
     liveReload: false,
     client: {
       webSocketTransport: 'sockjs',
+      overlay: false
     },
     webSocketServer: 'sockjs',
     host: 'localhost',
@@ -58,7 +61,7 @@ var server = new WebpackDevServer(
       directory: path.join(__dirname, '../build'),
     },
     devMiddleware: {
-      publicPath: `http://localhost:${env.PORT}/`,
+      // publicPath: `http://localhost:${env.PORT}/`,
       writeToDisk: true,
     },
     headers: {
@@ -66,15 +69,15 @@ var server = new WebpackDevServer(
     },
     allowedHosts: 'all',
     // server: "https"
-    server: {
-      type: "https",
-      options: {
-        key: path.resolve(__dirname, 'ssl', 'cert.key'),
-        crt: path.resolve(__dirname, 'ssl', 'cert.crt'),
-        passphrase: '123123',
-        requestCert: true
-      }
-    }
+    // server: {
+    //   type: "https",
+    //   options: {
+    //     key: path.resolve(__dirname, 'ssl', 'cert.key'),
+    //     crt: path.resolve(__dirname, 'ssl', 'cert.crt'),
+    //     passphrase: '123123',
+    //     requestCert: true
+    //   }
+    // }
   },
   compiler
 );
