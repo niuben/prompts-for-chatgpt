@@ -8,8 +8,7 @@ var WebpackDevServer = require('webpack-dev-server'),
   config = require('../webpack.config'),
   env = require('./env'),
   path = require('path'),
-  fs = require('fs'),
-  mkcert = require('mkcert');
+  fs = require('fs');
 
 
 var options = config.chromeExtensionBoilerplate || {};
@@ -27,23 +26,6 @@ for (var entryName in config.entry) {
 
 delete config.chromeExtensionBoilerplate;
 
-// create a certificate authority
-// const ca = await mkcert.createCA({
-//   organization: 'Hello CA',
-//   countryCode: 'NP',
-//   state: 'Bagmati',
-//   locality: 'Kathmandu',
-//   validityDays: 365
-// });
-
-// // then create a tls certificate
-// const cert = await mkcert.createCert({
-//   domains: ['127.0.0.1', 'localhost'],
-//   validityDays: 365,
-//   caKey: ca.key,
-//   caCert: ca.cert
-// });
-console.log("config", config);
 var compiler = webpack(config);
 var server = new WebpackDevServer(
   {    
@@ -61,7 +43,7 @@ var server = new WebpackDevServer(
       directory: path.join(__dirname, '../build'),
     },
     devMiddleware: {
-      // publicPath: `http://localhost:${env.PORT}/`,
+      // publicPath: `https://localhost:${env.PORT}/`,
       writeToDisk: true,
     },
     headers: {
