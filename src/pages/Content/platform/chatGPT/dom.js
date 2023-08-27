@@ -6,6 +6,7 @@ export function getElements() {
     return {
         mainEle: mainEle,
         chatGPTInforEle: $("div.text-gray-800"),
+        h1Ele: $("h1"),
         contentEle: mainEle != null ? $(mainEle).find('div.flex.flex-col') : null,
         chatGPTBtmEle: mainEle != null ? $(mainEle).find('.flex-shrink-0') : null,
         editBtns: mainEle != null ? $(mainEle).find(".group.w-full").even().find("button.p-1.rounded-md") : null
@@ -14,8 +15,10 @@ export function getElements() {
 
 // 创建prompts dom元素，用于模板渲染
 export function createPromptsEle() {
-    var { chatGPTBtmEle, contentEle } = getElements();
-    $(contentEle).eq(0).append("<div id='chatGTP_prompts'></div>");
+    var { chatGPTBtmEle, h1Ele } = getElements();
+    $("<div id='chatGTP_prompts'></div>").insertAfter("h1");
+    $("h1").hide();
+    // $(contentEle).eq(0).append("<div id='chatGTP_prompts'></div>");
 }
 
 // 创建添加prompt dom按钮，点击按钮展示创建弹出框

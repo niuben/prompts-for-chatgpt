@@ -191,6 +191,15 @@ var options = {
         },
       ],
     }),
+    //  new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: 'copy/test.html',
+    //       to: path.join(__dirname, 'build'),
+    //       force: true,
+    //     },
+    //   ],
+    // }),
     // new HtmlWebpackPlugin({
     //   template: path.join(__dirname, 'src', 'pages', 'Newtab', 'index.html'),
     //   filename: 'newtab.html',
@@ -217,8 +226,8 @@ var options = {
     }),
 
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'copy', 'content.html'),
-      filename: 'content.html',
+      template: path.join(__dirname, 'copy', 'test.html'),
+      filename: 'test.html',
       chunks: ['default'],
       inject: "body",
       cache: true

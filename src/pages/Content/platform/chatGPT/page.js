@@ -3,7 +3,7 @@
 // 获取当前在哪个页面;
 function getPage() {
     var path = location.pathname;
-    if (path === "/" || path.indexOf("content.html") > -1) {
+    if (path === "/" || path.indexOf("test.html") > -1) {
         return "index"
     } else if (path.indexOf("/c/") != -1) {
         return "chat"

@@ -32,7 +32,6 @@ function createApp() {
 
 ["replaceState", "pushState", "load"].forEach((eventName) => {
   window.addEventListener(eventName, function (e) {
-    
     if (isIndexPage()) {
       setTimeout(() => {
         createApp();
