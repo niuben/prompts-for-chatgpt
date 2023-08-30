@@ -22,7 +22,8 @@ const TabComponent = ({ children, templateName, onChange }) => {
     <div>
       <div className="tab-buttons">
         {
-          children.map((child, index) => (
+          
+          children.length > 1 && children.map((child, index) => (
             <button 
             key={index}
             className={tabIndex === index ? 'active' : ''}

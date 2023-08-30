@@ -16,8 +16,8 @@ export function getElements() {
 // 创建prompts dom元素，用于模板渲染
 export function createPromptsEle() {
     var { chatGPTBtmEle, h1Ele } = getElements();
-    $("<div id='chatGTP_prompts'></div>").insertAfter("h1");
-    $("h1").hide();
+    $("<div id='chatGTP_prompts'></div>").insertAfter(h1Ele);
+    $(h1Ele).hide();
     // $(contentEle).eq(0).append("<div id='chatGTP_prompts'></div>");
 }
 

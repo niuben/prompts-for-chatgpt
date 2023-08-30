@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 import public_data from '@/data/github_data.js';
+import code_data from '@/data/type/code.js';
+
 import useData, {getSearchData, getRangeData, getTopicData} from '@/hooks/useData.js';
 
 import Toolbar from "@/component/ToolBar.js";
@@ -16,7 +18,7 @@ emitter.emitEvent("pagination", [1, 2, 3]);
 
 const Public = ({ currentPrompt, onSetPrompt }) => {
     // 用于数据操作
-    const [data, setTopicData, setSearchData] = useData(public_data);
+    const [data, setTopicData, setSearchData] = useData(public_data.concat(code_data));
     // useEffect(()=>{
     //     console.log("data change", data);
     // }, [data]);
@@ -28,7 +30,7 @@ const Public = ({ currentPrompt, onSetPrompt }) => {
             }} onSelectTopic={(topic) => {
                 setTopicData(topic);
             }} />
-            <Template data={data} currentPrompt={currentPrompt} onChoosePrompt={(prompt) => {
+        <Template data={data} currentPrompt={currentPrompt} onChoosePrompt={(prompt) => {
                 onSetPrompt(prompt)
             }} />
         </div>)

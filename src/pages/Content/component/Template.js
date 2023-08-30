@@ -9,7 +9,7 @@ var handle;
 const Template = ({ data, currentPrompt, onChoosePrompt, isDelete, onDelete }) => {
   // const [id, setId] = useState(null);
   const [page, setPage] = useState(0);
-  const [pageLimite, setPageLimite] = useState(16);
+  const [pageLimite, setPageLimite] = useState(8);
 
   // 事件联动
   emitter.once("onSearch", () => {
@@ -30,11 +30,6 @@ const Template = ({ data, currentPrompt, onChoosePrompt, isDelete, onDelete }) =
     return str.substr(0, length);
   };
 
-  // useEffect(() => {
-  //   setData(getTotalData());
-  // }, [templateName, popupStatus, query, myData]);
-
-  // 用于节流时间句柄
   var handle;
 
   // const [data, setData] = useState(getTotalData());

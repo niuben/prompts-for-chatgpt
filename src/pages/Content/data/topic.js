@@ -14,6 +14,11 @@ var topic = [
     name: '角色扮演',
     child: [],
   },
+  {
+    id: 4,
+    name: '编程',
+    child: [],
+  }
 ];
 
 export default topic;

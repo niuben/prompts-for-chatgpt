@@ -37,14 +37,6 @@ const App = ({ onDel, onHide }) => {
             onHide && onHide();
           }}
         ></div> */}
-        {/* <Template
-        pompt={prompt}
-        setPrompt={(prompt) => {
-          setPrompt(prompt);
-          setAppPrompt(prompt);
-          setPlaceHolder(prompt);
-        }}
-      /> */}
         <Tab>
           <Public name="公共模板" currentPrompt={prompt} onSetPrompt={(prompt) => {
             setPrompt(prompt);
@@ -57,9 +49,6 @@ const App = ({ onDel, onHide }) => {
             setPlaceHolder(prompt);
           }} />
         </Tab>
-        {/* <TabComponent>
-      
-      </TabComponent> */}
         {popupStatus && (
           <Popup
             onClose={() => {
