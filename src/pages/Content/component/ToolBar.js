@@ -23,7 +23,7 @@ let DropdownsAndInput = ({isSelect,  isSearch, onSelectTopic, onSearch }) => {
           }}
         />
       )}
-      <div
+      {/* <div
         className="circle"
         onClick={() => {
           setPopupStatus(true);
@@ -31,7 +31,7 @@ let DropdownsAndInput = ({isSelect,  isSearch, onSelectTopic, onSearch }) => {
         }}
       >
         <div className="plus"></div>
-      </div>
+      </div> */}
       {
         isSearch !== false && <input
           placeholder="搜索"

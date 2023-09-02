@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import ReactDOM  from 'react-dom';
+import $ from "jquery";
 
 import './style/Common.scss';
 import './style/App.scss';
@@ -27,6 +29,12 @@ const App = ({ onDel, onHide }) => {
     <div className="outerWrap">
       <div className="mainInner">
         <h2 className="title">ChatGPT 提示词</h2>
+        <Public name="公共模板" currentPrompt={prompt} onSetPrompt={(prompt) => {
+            setPrompt(prompt);
+            setAppPrompt(prompt);
+            setPlaceHolder(prompt);
+          }} />
+
         {/* <div
           className="close-button"
           href="javascript:void(0)"
@@ -37,7 +45,7 @@ const App = ({ onDel, onHide }) => {
             onHide && onHide();
           }}
         ></div> */}
-        <Tab>
+        {/* <Tab>
           <Public name="公共模板" currentPrompt={prompt} onSetPrompt={(prompt) => {
             setPrompt(prompt);
             setAppPrompt(prompt);
@@ -60,7 +68,13 @@ const App = ({ onDel, onHide }) => {
               setTemplateName('my');
             }}
           />
-        )}
+        )} */}
+        {
+          // ReactDOM.createPortal(<Public />, 
+          //   $("#prompt-textarea").parent().parent()[0],
+          //   100
+          // )
+        }
       </div>
     </div>
   );

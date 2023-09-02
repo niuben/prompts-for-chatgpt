@@ -72,7 +72,7 @@ export function setPlaceHolder(prompt) {
     let textareaEle = $('form.stretch textarea');
     $(textareaEle).attr(
         'placeholder',
-        prompt != null ? prompt.placeholder : 'Send a message.'
+        prompt != null ? (prompt.placeholder || prompt.placeHolder) : 'Send a message.'
     );
     $(textareaEle).focus();
 };
