@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import { insertBefore, createAddBtn } from './utils/dom';
-import { getElements, createPromptsEle, createAddPromptBtn, removeAddPromptBtn, getPromptsEle, removePrompts, hideChatGPT, showChatGPT } from "./platform/chatGPT/dom";
+import { getElements, createPromptsEle, createBottomToolbar, createAddPromptBtn, removeAddPromptBtn, getPromptsEle, removePrompts, hideChatGPT, showChatGPT } from "./platform/chatGPT/dom";
 import { isIndexPage, isChatPage } from "./platform/chatGPT/page";
 import { onSendMessage} from "./platform/chatGPT/listener";
 
@@ -32,6 +32,10 @@ function createApp() {
 
 ["replaceState", "pushState", "load"].forEach((eventName) => {
   window.addEventListener(eventName, function (e) {
+    
+    //创建存放底部toolbar div节点;
+    createBottomToolbar()
+    
     if (isIndexPage()) {
       setTimeout(() => {
         createApp();

@@ -12,22 +12,29 @@ import React, { useState } from 'react';
 
 }]
 */
-import topicOptions from '@/data/topic.js';
+
 import { toSelect } from '@/utils/toSelect.js';
 
 
-export default function Select({ title, defaultValue, onChange }) {
+export default function Select({ title, className, data, defaultValue, onChange }) {
   const [dropdownValue, setDropdownValue] = useState(defaultValue);
 
-  var options = toSelect(topicOptions, {
+  let options = toSelect(data, {
     key: 'name',
     val: 'name',
   });
 
+  let dynamicClassName = "dropdown-container left"
+  if(className) {
+    dynamicClassName += ` ${className}`;
+  }
+
+
   return (
-    <div className="dropdown-container left">
-      <label className="dropdown-label">{title}:</label>
-      <select
+    <div className={dynamicClassName}>
+      <div><label className="dropdown-label">{title}</label></div>
+      <div>
+        <select
         className="dropdown"
         value={dropdownValue}
         onChange={(e) => {
@@ -44,6 +51,7 @@ export default function Select({ title, defaultValue, onChange }) {
           );
         })}
       </select>
+      </div>
     </div>
   );
 }

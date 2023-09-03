@@ -12,8 +12,8 @@ export let Language = [
   },
   {
     id: 3,
-    name: "繁体中文",
-    value: "繁体中文"
+    name: "繁體中文",
+    value: "繁體中文"
   }
 ];
 

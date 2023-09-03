@@ -1,7 +1,10 @@
+// 顶部tool
 import React, { useState } from 'react';
 import '@/style/Tool.scss';
 import Select from './Select.js';
 import emitter from "@/utils/emitter.js";
+import topicOptions from '@/data/topic.js';
+
 
 let handle;
 let DropdownsAndInput = ({isSelect,  isSearch, onSelectTopic, onSearch }) => {
@@ -14,6 +17,7 @@ let DropdownsAndInput = ({isSelect,  isSearch, onSelectTopic, onSearch }) => {
         <Select
           title="分类"
           default={'全部'}
+          data = {topicOptions}
           onChange={(topic) => {
             console.log('topic', topic);
             setTopic(topic);

@@ -30,6 +30,12 @@ export function createAddPromptBtn(){
     });
 }
 
+// 创建在表单之前创建占位符，将语言、写作风格和语气等选项插入其中
+export function createBottomToolbar(){
+    $("<div id='promptsToolbar'></div>").insertBefore("textarea#prompt-textarea")
+}
+
+
 // 删除添加prompt的按钮
 export function removeAddPromptBtn(){
     $("button.addPrompt").remove();

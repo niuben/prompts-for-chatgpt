@@ -17,8 +17,10 @@ import Popup from './component/Popup';
 import My from "./modules/My";
 import Public from "./modules/Public";
 
+import ButtomToolBar  from "./component/ButtomToolBar";
+
 import { setPlaceHolder } from "./platform/chatGPT/dom";
-import { setAppPrompt } from "./platform/chatGPT/proxyFetch";
+import { setAppPrompt, setCondition, getCondition} from "./platform/chatGPT/proxyFetch";
 
 const App = ({ onDel, onHide }) => {
   var [prompt, setPrompt] = useState({ id: -1 });
@@ -70,10 +72,15 @@ const App = ({ onDel, onHide }) => {
           />
         )} */}
         {
-          // ReactDOM.createPortal(<Public />, 
-          //   $("#prompt-textarea").parent().parent()[0],
-          //   100
-          // )
+          ReactDOM.createPortal(<ButtomToolBar onSelect={(key, value)=>{
+              setCondition(key, value); 
+              getCondition();           
+          }} onAction={()=>{
+            
+          }}/>, 
+            $("#promptsToolbar")[0],
+            100
+          )
         }
       </div>
     </div>
