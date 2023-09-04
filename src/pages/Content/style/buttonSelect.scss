@@ -1,0 +1,22 @@
+.buttonSelect {
+
+    button {
+        border-radius: 5px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border: none;
+        padding: 5px 25px;
+        border: 1px solid #ccc;
+        border-right: 0px;
+    }
+
+    select {
+        padding-left: 27px;
+    }
+
+    .leftNoneRadius {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+}

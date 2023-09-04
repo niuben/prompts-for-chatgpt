@@ -29,7 +29,7 @@ export function getCondition(key, val){
 //代理chatGPT自身fetch请求
 
 function proxyFetch() {
-    alert(123);
+
     fetchHook((url, options) => {
 
         // 判断是否对话

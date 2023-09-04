@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import '@/style/Tool.scss';
 import Select from './Select.js';
+import ButtonSelect from "./ButtonSelect.js";
 import emitter from "@/utils/emitter.js";
 import {Language, Tone, WriteStyle, Action} from "@/data/condition.js"
 
@@ -42,12 +43,12 @@ let ButtonToolBar = ({isSelect, onSelect, onAction }) => {
         }}
       />
 
-      <Select
+      <ButtonSelect
         title="快捷操作"
         data = {Action}
-        default={'继续'}
+        defaultValue='继续'
         className="right mr10"
-        onChange={(action) => {
+        onSelect={(action) => {
           onAction(action);
         }}
       />
