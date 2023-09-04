@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import { insertBefore, createAddBtn } from './utils/dom';
 import { getElements, createPromptsEle, createBottomToolbar, createAddPromptBtn, removeAddPromptBtn, getPromptsEle, removePrompts, hideChatGPT, showChatGPT } from "./platform/chatGPT/dom";
 import { isIndexPage, isChatPage } from "./platform/chatGPT/page";
 import { onSendMessage} from "./platform/chatGPT/listener";

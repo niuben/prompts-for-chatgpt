@@ -19,7 +19,7 @@ import Public from "./modules/Public";
 
 import ButtomToolBar  from "./component/ButtomToolBar";
 
-import { setPlaceHolder } from "./platform/chatGPT/dom";
+import { setPlaceHolder, quickAction } from "./platform/chatGPT/dom";
 import { setAppPrompt, setCondition, getCondition} from "./platform/chatGPT/proxyFetch";
 
 const App = ({ onDel, onHide }) => {
@@ -75,11 +75,10 @@ const App = ({ onDel, onHide }) => {
           ReactDOM.createPortal(<ButtomToolBar onSelect={(key, value)=>{
               setCondition(key, value); 
               getCondition();           
-          }} onAction={()=>{
-            
+          }} onAction={(action)=>{
+            quickAction(action);
           }}/>, 
             $("#promptsToolbar")[0],
-            100
           )
         }
       </div>

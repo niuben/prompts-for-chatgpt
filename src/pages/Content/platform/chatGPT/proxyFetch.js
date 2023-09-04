@@ -26,6 +26,8 @@ export function getCondition(key, val){
     console.log(condition);
 }
 
+
+
 //代理chatGPT自身fetch请求
 
 function proxyFetch() {

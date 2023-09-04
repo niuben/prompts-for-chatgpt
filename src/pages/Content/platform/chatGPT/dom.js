@@ -82,3 +82,9 @@ export function setPlaceHolder(prompt) {
     );
     $(textareaEle).focus();
 };
+
+export function quickAction(action){
+    let textareaEle = $('form.stretch textarea');
+    $(textareaEle).val(action);
+    $(textareaEle).next().click();
+}

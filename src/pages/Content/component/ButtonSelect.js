@@ -23,7 +23,7 @@ let ButtonSelect = ({title, className, data, defaultValue, onSelect}) => {
         <div>
             <button className='left' onClick={(e)=>{
                 e.preventDefault();
-                onSelect && onSelect()
+                onSelect && onSelect(dropdownValue);
             }}>{dropdownValue}</button>
             <select
             className="dropdown leftNoneRadius"
@@ -32,6 +32,7 @@ let ButtonSelect = ({title, className, data, defaultValue, onSelect}) => {
             onChange={(e, val) => {
                 var val = e.target.value;
                 setDropdownValue(val);
+                onSelect && onSelect(val);
              }}
             >
             {options.map((item, index) => {
