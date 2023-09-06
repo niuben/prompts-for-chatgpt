@@ -14,8 +14,8 @@ export function onSendMessage(callback){
     });
 
     // 监听输入框右侧按钮，点击后触发回调函数;
-    $("#prompt-textarea").next().off("click");
-    $("#prompt-textarea").next().on("click", (e)=>{
+    // $("#prompt-textarea").next().off("click");
+    $("#prompt-textarea").next().one("click", (e)=>{
         callback && callback(e);
     });    
 

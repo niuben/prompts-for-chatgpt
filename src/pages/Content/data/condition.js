@@ -98,22 +98,22 @@ export let Action = [
   {
     id: 1,
     name: "继续",
-    value: "继续" 
+    value: "请继续写" 
   },
   {
     id: 2,
     name: "清除",
-    value: "清除" 
+    value: "清除回话" 
   },
   {
     id: 3,
-    name: "返回",
-    value: "返回" 
+    name: "上一步",
+    value: "返回上一步" 
   },
   {
     id: 4,
     name: "举例",
-    value: "举例" 
+    value: "举个例子" 
   }
 ];
 

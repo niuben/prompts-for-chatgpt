@@ -85,6 +85,17 @@ export function setPlaceHolder(prompt) {
 
 export function quickAction(action){
     let textareaEle = $('form.stretch textarea');
-    $(textareaEle).val(action);
-    $(textareaEle).next().click();
+    $(textareaEle).trigger("focus");    
+    $(textareaEle).attr("placeholder", " ").val(action).text(action);
+    
+    // 默认自定义事件，jQuery事件会被chatGPT阻止
+    const inputEvent = new Event('input', {
+        bubbles: true,
+        cancelable: true,
+    });
+    $(textareaEle)[0].dispatchEvent(inputEvent);
+
+    setTimeout(() => {
+        $('button[data-testid="send-button"]').trigger("click");        
+    }, 200);
 }

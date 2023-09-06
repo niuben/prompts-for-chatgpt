@@ -50,12 +50,12 @@ function createApp() {
     }
   
     //绑定发送信息事件
-    onSendMessage((event)=>{      
-      removePrompts();
-      setTimeout(()=>{
-        createAddPromptBtn();
-      }, 1000);
-    })
+    // onSendMessage((event)=>{      
+    //   removePrompts();
+    //   setTimeout(()=>{
+    //     createAddPromptBtn();
+    //   }, 1000);
+    // })
 
   })
 });

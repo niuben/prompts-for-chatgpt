@@ -5,12 +5,13 @@ import { toSelect } from '@/utils/toSelect.js';
 
 let handle;
 let ButtonSelect = ({title, className, data, defaultValue, onSelect}) => {    
+    
     const [dropdownValue, setDropdownValue] = useState(defaultValue);
 
     let options = toSelect(data, {
-    key: 'name',
-    val: 'name',
-  });
+        key: 'name',
+        val: 'name',
+    });
 
     let dynamicClassName = "toolbar buttonSelect"
     if(className) {
@@ -21,10 +22,11 @@ let ButtonSelect = ({title, className, data, defaultValue, onSelect}) => {
        <div className={dynamicClassName}>
         <div><label className="dropdown-label">{title}</label></div>
         <div>
-            <button className='left' onClick={(e)=>{
+            <button type="button" className='left' onClick={(e)=>{
                 e.preventDefault();
+                e.stopPropagation();
                 onSelect && onSelect(dropdownValue);
-            }}>{dropdownValue}</button>
+            }} >{dropdownValue}</button>
             <select
             className="dropdown leftNoneRadius"
             style={{"width": "37px"}}

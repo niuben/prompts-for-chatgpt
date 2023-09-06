@@ -29,6 +29,7 @@ const App = ({ onDel, onHide }) => {
   
   return (
     <div className="outerWrap">
+
       <div className="mainInner">
         <h2 className="title">ChatGPT 提示词</h2>
         <Public name="公共模板" currentPrompt={prompt} onSetPrompt={(prompt) => {

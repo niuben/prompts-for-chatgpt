@@ -44,7 +44,7 @@ let ButtonToolBar = ({isSelect, onSelect, onAction }) => {
       />
 
       <ButtonSelect
-        title="快捷操作"
+        title="&nbsp;"
         data = {Action}
         defaultValue='继续'
         className="right mr10"
