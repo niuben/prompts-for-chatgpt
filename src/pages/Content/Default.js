@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import { getElements, createPromptsEle, createBottomToolbar, createAddPromptBtn, removeAddPromptBtn, getPromptsEle, removePrompts, hideChatGPT, showChatGPT } from "./platform/chatGPT/dom";
+import { getElements, createPromptsEle, createBottomToolbar, createAddPromptBtn, removeAddPromptBtn, getPromptsEle, removePrompts, hideChatGPT, showChatGPT, hideElements } from "./platform/chatGPT/dom";
 import { isIndexPage, isChatPage } from "./platform/chatGPT/page";
 import { onSendMessage} from "./platform/chatGPT/listener";
 
@@ -32,9 +32,13 @@ function createApp() {
 ["replaceState", "pushState", "load"].forEach((eventName) => {
   window.addEventListener(eventName, function (e) {
     
+    //删除一些无用的dom
+    hideElements(); 
+
     //创建存放底部toolbar div节点;
     createBottomToolbar()
-    
+
+    // 
     if (isIndexPage()) {
       setTimeout(() => {
         createApp();
@@ -43,6 +47,7 @@ function createApp() {
     }
 
     if (isChatPage()) {
+      
       setTimeout(() => {
         removeAddPromptBtn()
         createAddPromptBtn();               
@@ -50,12 +55,16 @@ function createApp() {
     }
   
     //绑定发送信息事件
-    // onSendMessage((event)=>{      
-    //   removePrompts();
-    //   setTimeout(()=>{
-    //     createAddPromptBtn();
-    //   }, 1000);
-    // })
+    onSendMessage((event)=>{      
+      // removePrompts();
+      
+      // 隐藏prompts模板
+      hidePrompts();
+
+      setTimeout(()=>{
+        // createAddPromptBtn();
+      }, 1000);
+    })
 
   })
 });

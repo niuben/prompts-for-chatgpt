@@ -1,5 +1,4 @@
 import $ from 'jquery';
-
 // 获取chatGPT网站各种dom节点
 export function getElements() {
     var mainEle = $('main.relative.h-full.w-full');
@@ -15,8 +14,9 @@ export function getElements() {
 
 // 创建prompts dom元素，用于模板渲染
 export function createPromptsEle() {
-    var { chatGPTBtmEle, h1Ele } = getElements();
-    $("<div id='chatGTP_prompts'></div>").insertAfter(h1Ele);
+    var { chatGPTBtmEle, h1Ele, mainEle } = getElements();
+    // $("<div id='chatGTP_prompts'></div>").insertAfter(h1Ele);
+    $(mainEle).append("<div id='chatGTP_prompts'></div>");
     $(h1Ele).hide();
     // $(contentEle).eq(0).append("<div id='chatGTP_prompts'></div>");
 }
@@ -47,6 +47,7 @@ export function getPromptsEle() {
         createPromptsEle();
     }
     return $("#chatGTP_prompts");
+
 }
 
 // 移除prompts模板
@@ -69,14 +70,25 @@ export function showChatGPT() {
 // 隐藏首页 chatGPT information
 export function hideChatGPT() {
     var { chatGPTInforEle } = getElements();
-    $(chatGPTInforEle).hide();
+    $(chatGPTInforEle).hide();    
 }
+
+// 页面初始化时，隐藏一些无用元素
+export function hideElements(){    
+    $("form .grow").hide();
+}
+
+// 隐藏prompts模板
+export function hidePrompts(){
+
+} 
 
 // 给chatGPT textarea 设置placeholder
 export function setPlaceHolder(prompt) {     
     // 获取textarea节点
     let textareaEle = $('form.stretch textarea');
-    $(textareaEle).attr(
+
+    $(textareaEle).val("").attr(
         'placeholder',
         prompt != null ? (prompt.placeholder || prompt.placeHolder) : 'Send a message.'
     );
@@ -96,6 +108,6 @@ export function quickAction(action){
     $(textareaEle)[0].dispatchEvent(inputEvent);
 
     setTimeout(() => {
-        $('button[data-testid="send-button"]').trigger("click");        
+        $('button[data-testid="send-button"]').trigger("click");
     }, 200);
 }

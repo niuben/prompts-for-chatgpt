@@ -21,16 +21,32 @@ import ButtomToolBar  from "./component/ButtomToolBar";
 
 import { setPlaceHolder, quickAction } from "./platform/chatGPT/dom";
 import { setAppPrompt, setCondition, getCondition} from "./platform/chatGPT/proxyFetch";
+import { getTemplateHeight } from "./platform/chatGPT/page";
+
+import emitter from "@/utils/emitter.js";
+
+
 
 const App = ({ onDel, onHide }) => {
   var [prompt, setPrompt] = useState({ id: -1 });
   var [popupStatus, setPopupStatus] = useState(false);
+  var [isShow, setIsShow] = useState(true); 
   // 是否移除prompts模板，模板只移除一次;
+
+  var _className = `mainInner ${isShow ? "" : "hide"}`;
   
+  // 当进入对话模式时，隐藏所有模板
+  emitter.on("onChat", () => {
+    setIsShow(false);
+  })
+
+
   return (
     <div className="outerWrap">
-
-      <div className="mainInner">
+      <div className="sidebarIcon" onClick={()=>{
+        setIsShow(!isShow);
+      }}></div>
+      <div className={_className} style={{"height": getTemplateHeight() + "px"}}>
         <h2 className="title">ChatGPT 提示词</h2>
         <Public name="公共模板" currentPrompt={prompt} onSetPrompt={(prompt) => {
             setPrompt(prompt);
@@ -38,16 +54,17 @@ const App = ({ onDel, onHide }) => {
             setPlaceHolder(prompt);
           }} />
 
-        {/* <div
+        <div
           className="close-button"
           href="javascript:void(0)"
           onClick={() => {
-            setPrompt(null);
-            setAppPrompt(null);
-            setPlaceHolder(null);
-            onHide && onHide();
+            setIsShow(false);
+            // setPrompt(null);
+            // setAppPrompt(null);
+            // setPlaceHolder(null);
+            // onHide && onHide();
           }}
-        ></div> */}
+        ></div>
         {/* <Tab>
           <Public name="公共模板" currentPrompt={prompt} onSetPrompt={(prompt) => {
             setPrompt(prompt);
@@ -71,18 +88,18 @@ const App = ({ onDel, onHide }) => {
               setTemplateName('my');
             }}
           />
-        )} */}
-        {
-          ReactDOM.createPortal(<ButtomToolBar onSelect={(key, value)=>{
-              setCondition(key, value); 
-              getCondition();           
-          }} onAction={(action)=>{
-            quickAction(action);
-          }}/>, 
-            $("#promptsToolbar")[0],
-          )
-        }
+        )} */}              
       </div>
+      {
+        ReactDOM.createPortal(<ButtomToolBar onSelect={(key, value)=>{
+            setCondition(key, value); 
+            getCondition();           
+        }} onAction={(action)=>{
+          quickAction(action);
+        }}/>, 
+          $("#promptsToolbar")[0]
+        )
+      }
     </div>
   );
 };

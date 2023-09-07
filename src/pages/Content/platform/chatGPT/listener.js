@@ -11,10 +11,14 @@ export function onSendMessage(callback){
     $("#prompt-textarea").off("keydown");
     $("#prompt-textarea").on("keydown", (e)=>{
         if(e.keyCode == 13) callback && callback(e);
+        
+
     });
 
     // 监听输入框右侧按钮，点击后触发回调函数;
-    // $("#prompt-textarea").next().off("click");
+
+    console.log("next", $("#prompt-textarea").next());
+    $("#prompt-textarea").next().off("click");
     $("#prompt-textarea").next().one("click", (e)=>{
         callback && callback(e);
     });    
