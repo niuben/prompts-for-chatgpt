@@ -39,11 +39,11 @@ const Template = ({ data, currentPrompt, onChoosePrompt, isDelete, onDelete }) =
         {getCurrentData(data, page, pageLimite).map((prompt) => (
           <div
             className={
-              'card' +
-              (currentPrompt != null && prompt.id == currentPrompt.id
-                ? ' active'
-                : '') +
-              ' ' +
+              'card ' +
+              // (currentPrompt != null && prompt.id == currentPrompt.id
+              //   ? ' active'
+              //   : '') +
+              // ' ' +
               (prompt.isUsed == true ? 'isUsed' : '')
             }
             key={prompt.id}
@@ -53,7 +53,7 @@ const Template = ({ data, currentPrompt, onChoosePrompt, isDelete, onDelete }) =
                 // setId(prompt.id);
                 onChoosePrompt(prompt);
               } else {
-                onChoosePrompt(null);
+                // onChoosePrompt(null);
               }
             }}
           >

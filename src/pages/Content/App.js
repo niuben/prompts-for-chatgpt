@@ -36,7 +36,7 @@ const App = ({ onDel, onHide }) => {
   var _className = `mainInner ${isShow ? "" : "hide"}`;
   
   // 当进入对话模式时，隐藏所有模板
-  emitter.on("onChat", () => {
+  emitter.once("onChat", () => {
     setIsShow(false);
   })
 
@@ -52,6 +52,7 @@ const App = ({ onDel, onHide }) => {
             setPrompt(prompt);
             setAppPrompt(prompt);
             setPlaceHolder(prompt);
+            emitter.emitEvent("")
           }} />
 
         <div
@@ -91,7 +92,12 @@ const App = ({ onDel, onHide }) => {
         )} */}              
       </div>
       {
-        ReactDOM.createPortal(<ButtomToolBar onSelect={(key, value)=>{
+        ReactDOM.createPortal(<ButtomToolBar prompt={prompt} onPromptDel={()=>{
+          setPrompt(null);
+          setAppPrompt(null);
+          setPlaceHolder(null);
+
+        }} onSelect={(key, value)=>{
             setCondition(key, value); 
             getCondition();           
         }} onAction={(action)=>{

@@ -1,6 +1,8 @@
 /* 监听chatGPT 输方法;  */ 
 
 import $ from "jquery";
+import emitter from "@/utils/emitter.js";
+import {getTemplateHeight} from "@/platform/chatGPT/page";
 
 export function onSendMessage(callback){
     
@@ -10,7 +12,10 @@ export function onSendMessage(callback){
     // 监听输入框回车事件, 回车时触发回调函数;
     $("#prompt-textarea").off("keydown");
     $("#prompt-textarea").on("keydown", (e)=>{
-        if(e.keyCode == 13) callback && callback(e);
+        if(e.keyCode == 13) {
+            // callback && callback(e);
+            emitter.emitEvent("onChat");
+        }
         
 
     });
@@ -20,8 +25,26 @@ export function onSendMessage(callback){
     console.log("next", $("#prompt-textarea").next());
     $("#prompt-textarea").next().off("click");
     $("#prompt-textarea").next().one("click", (e)=>{
-        callback && callback(e);
+        // callback && callback(e);
+        emitter.emitEvent("onChat");
     });    
 
 }
+
+$(window).on("load", function(){
+    // 创建一个函数来处理窗口尺寸变化的事件
+    function handleResize() {
+        // 获取新的窗口宽度和高度
+        $(".mainInner").height(getTemplateHeight());
+
+    }
+
+    // 使用resize方法绑定窗口尺寸变化事件处理函数
+    $(window).on("resize", handleResize);
+
+    // 初始页面加载时也执行一次
+    setTimeout(() => {
+        handleResize();
+    }, 2000);
+});
 

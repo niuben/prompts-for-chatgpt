@@ -70,6 +70,34 @@
   align-items: center;
 }
 
+.prompts_tips {
+  position: relative;
+  display: inline-block;
+  padding: 2px 5px;
+  padding-right: 30px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+.prompts_tips_close::before,
+.prompts_tips_close::after {
+  cursor: pointer;
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  width: 14px;
+  height: 2px;
+  background-color: #fff;
+  ;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.prompts_tips_close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
 /* Input label */
 .input-label {
   margin-left: 20px;

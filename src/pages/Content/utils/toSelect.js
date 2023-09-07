@@ -15,3 +15,12 @@ export function toSelect(arr, map) {
     };
   });
 }
+
+export function getKeyByVal(val, obj) {
+  for(let item in obj){
+    if(item.val == val) return item.key;
+  }
+  return null;
+}
+
+
