@@ -8,10 +8,9 @@ import { isIndexPage, isChatPage } from "./platform/chatGPT/page";
 import { onSendMessage} from "./platform/chatGPT/listener";
 
 import './utils/history.js';
-import './style/App.scss';
 
-import './style/Dark.scss';
 import App from './App.js';
+
 
 function createApp() {
   ReactDOM.render(

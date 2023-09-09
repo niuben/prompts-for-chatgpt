@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM  from 'react-dom';
 import $ from "jquery";
 
+import './style/App.scss';
 import './style/Common.scss';
 import './style/App.scss';
 import './style/Close.scss';
@@ -9,6 +10,12 @@ import './style/Icon.scss';
 import './style/Input.scss';
 import './style/Tool.scss';
 import './style/Tab.scss';
+import './style/Pagination.scss';
+import "@/style/buttonSelect.scss";
+
+// 暗黑模式放在最后面
+import './style/Dark.scss';
+
 
 import Tab from './component/Tab';
 import Popup from './component/Popup';

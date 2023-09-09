@@ -1,6 +1,5 @@
 // 顶部tool
 import React, { useState } from 'react';
-import "@/style/buttonSelect.scss";
 import {toSelect, getKeyByVal} from '@/utils/toSelect.js';
 
 let ButtonSelect = ({title, className, data, defaultValue, onSelect}) => {    

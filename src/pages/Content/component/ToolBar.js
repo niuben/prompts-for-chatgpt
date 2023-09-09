@@ -37,23 +37,28 @@ let DropdownsAndInput = ({isSelect,  isSearch, onSelectTopic, onSearch }) => {
         <div className="plus"></div>
       </div> */}
       {
-        isSearch !== false && <input
-          placeholder="搜索"
-          className="right mr20"
-          onChange={(e) => {
-            var query = e.target.value;
-            if (handle != undefined) {
-              clearTimeout(handle);
-              handle = undefined;
-            }
-            handle = setTimeout(() => {
-              setQuery(query);
-              onSearch(query, topic);
-              emitter.emitEvent("onSearch");
-              handle == undefined;
-            }, 150);
-          }}
-        />
+        isSearch !== false && <div>        
+          <div><label className="dropdown-label">&nbsp;</label></div>
+          <div> 
+            <input
+              placeholder="搜索"
+              className="right mr20"
+              onChange={(e) => {
+                var query = e.target.value;
+                if (handle != undefined) {
+                  clearTimeout(handle);
+                  handle = undefined;
+                }
+                handle = setTimeout(() => {
+                  setQuery(query);
+                  onSearch(query, topic);
+                  emitter.emitEvent("onSearch");
+                  handle == undefined;
+                }, 150);
+              }}
+            />
+          </div>
+        </div>
       }
     </div>
   );
