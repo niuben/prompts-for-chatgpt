@@ -47,7 +47,7 @@ const Pagination = ({ itemsPerPage, currentPage, totalItems, paginate }) => {
             tabIndex="-1"
             aria-disabled={activePage === 1}
           >
-            上一页
+            Prev
           </span>
         </li>
         {/* {pageNumbers.map((number) => (
@@ -70,7 +70,7 @@ const Pagination = ({ itemsPerPage, currentPage, totalItems, paginate }) => {
             className="page-link"
             aria-disabled={activePage === pageNumbers.length - 1}
           >
-            下一页
+            Next
           </span>
         </li>
       </ul>

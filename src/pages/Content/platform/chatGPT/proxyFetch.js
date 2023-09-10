@@ -82,11 +82,11 @@ function proxyFetch() {
 
             
             
-            if(condition.Language !== null) content += ` 请用${condition.Language}输出结果。`
+            if(condition.Language !== null) content += `Please output the result in ${condition.Language}.`
 
-            if(condition.Tone !== null && condition.Tone !== "默认" ) content += ` 请用${condition.Tone}语气输出结果。`
+            if(condition.Tone !== null && condition.Tone !== "Default" ) content += ` Please output the result in a ${condition.Tone} tone.`
 
-            if(condition.WriteStyle !== null && condition.WriteStyle !== "默认" ) content += ` 请用${condition.WriteStyle}写作风格输出结果。`
+            if(condition.WriteStyle !== null && condition.WriteStyle !== "Default" ) content += ` Please output the result in a ${condition.WriteStyle} tone.`
 
             message.content.parts[0] = content;
             

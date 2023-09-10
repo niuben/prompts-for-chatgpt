@@ -15,7 +15,7 @@ let DropdownsAndInput = ({isSelect,  isSearch, onSelectTopic, onSearch }) => {
     <div className="toolbar">      
       {isSelect !== false && (
         <Select
-          title="分类"
+          title="Category"
           default={'全部'}
           data = {topicOptions}
           onChange={(topic) => {
@@ -41,7 +41,7 @@ let DropdownsAndInput = ({isSelect,  isSearch, onSelectTopic, onSearch }) => {
           <div><label className="dropdown-label">&nbsp;</label></div>
           <div> 
             <input
-              placeholder="搜索"
+              placeholder="Search"
               className="right mr20"
               onChange={(e) => {
                 var query = e.target.value;

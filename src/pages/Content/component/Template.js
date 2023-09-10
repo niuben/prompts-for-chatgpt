@@ -70,7 +70,7 @@ const Template = ({ data, currentPrompt, onChoosePrompt, isDelete, onDelete }) =
                 <span className="icon icon_topic">{prompt.topic}</span>
                 <span className="icon icon_author">{[prompt.author]}</span>
                 {prompt.isUsed && (
-                  <span className="icon icon_pin">已使用</span>
+                  <span className="icon icon_pin">used</span>
                 )}
               </p>
               {/* <p>{keyword[prompt.topic]}</p> */}

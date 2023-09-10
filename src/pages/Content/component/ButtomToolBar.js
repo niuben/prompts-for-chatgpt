@@ -4,7 +4,8 @@ import '@/style/Tool.scss';
 import Select from './Select.js';
 import ButtonSelect from "./ButtonSelect.js";
 import emitter from "@/utils/emitter.js";
-import {Language, Tone, WriteStyle, Action} from "@/data/condition.js"
+import {Tone, WriteStyle, Action} from "@/data/condition.js"
+import {Language} from "@/data/language.js"
 import {isChatPage} from "@/platform/chatGPT/page";
 
 let handle;
@@ -28,10 +29,10 @@ let ButtonToolBar = ({isSelect, prompt, onPromptDel, onSelect, onAction }) => {
       }
       <div>
         <Select
-        title="语言"
+        title="Language"
         data = {Language}
         className="mr10"
-        default={'中文'}
+        default={'English'}
         onChange={(language) => {
           
           onSelect("Language", language);
@@ -40,19 +41,19 @@ let ButtonToolBar = ({isSelect, prompt, onPromptDel, onSelect, onAction }) => {
       />
       
       <Select
-        title="语言风格"
+        title="Tone"
         data = {Tone}
         className="mr10"
-        default={'默认'}
+        default={'Default'}
         onChange={(tone) => {
           onSelect("Tone", tone);
         }}
       />
 
       <Select
-        title="写作类型"
+        title="Write Style"
         data = {WriteStyle}
-        default={'默认'}
+        default={'Default'}
         className="mr10"
         onChange={(writeStyle) => {
           onSelect("WriteStyle", writeStyle);
@@ -63,7 +64,7 @@ let ButtonToolBar = ({isSelect, prompt, onPromptDel, onSelect, onAction }) => {
         isChatStatus && <ButtonSelect
           title="&nbsp;"
           data = {Action}
-          defaultValue='继续'
+          defaultValue='Continue'
           className="right mr10"
           onSelect={(action) => {
             onAction(action);
