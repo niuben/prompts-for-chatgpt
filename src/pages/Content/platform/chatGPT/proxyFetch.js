@@ -70,12 +70,17 @@ function proxyFetch() {
             var part = message.content.parts[0];
             var content = part;
             
+            console.log("content", part);
+
+
             if(appPrompt != null){
                 // 如果有prompt字段（更新详细的描述），使用prompt字段;
                 content = appPrompt.prompt || appPrompt.content;            
                 // 将输入框内容替换提示词placeholder占位符;
                 content = content.replace(/\[placeholder\]/g, part);
             }
+
+            
             
             if(condition.Language !== null) content += ` 请用${condition.Language}输出结果。`
 
