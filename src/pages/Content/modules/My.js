@@ -13,14 +13,14 @@ const My = ({ currentPrompt, onSetPrompt }) => {
     const [myData, addMyData, updateMyData, removeMyData] = useMyData();
 
     // 用于数据操作
-    const [data, setTopicData, setSearchData] = useData(myData);
+    const [data, setCategoryData, setSearchData] = useData(myData);
 
     return (
         <div>
             <Toolbar onSearch={(query) => {
                 setSearchData(query);
-            }} onSelectTopic={(topic) => {
-                setTopicData(topic);
+            }} onSelectCategory={(Category) => {
+                setCategoryData(Category);
             }} />
             <Template currentPrompt={currentPrompt} data={data} />
         </div>)

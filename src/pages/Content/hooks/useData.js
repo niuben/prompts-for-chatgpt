@@ -17,15 +17,15 @@ export function getRangeData(data) {
 }
 
 // 设置分类数据
-export function getTopicData(data, topic) {
+export function getCategoryData(data, category) {
   
-  let topicData = [];
+  let categoryData = [];
   data.map((item) => {
-    if (item.topic == topic || topic == "全部") {
-      topicData.push(item);
+    if (item.category == category || category == "All") {
+      categoryData.push(item);
     }
   });
-  return topicData;
+  return categoryData;
 }
 
 // 设置搜索数据
@@ -34,11 +34,11 @@ export function getSearchData(data, query) {
   if (query != '' && query != undefined) {
     searchData = [];
     data.map((item) => {
-      item.title += '';
-      item.content += '';
+      item.prompt_title += '';
+      item.teaser += '';
       if (
-        item.title.indexOf(query) != -1 ||
-        item.content.indexOf(query) != -1
+        item.prompt_title.indexOf(query) != -1 ||
+        item.teaser.indexOf(query) != -1
       ) {
         searchData.push(item);
       }
@@ -64,18 +64,18 @@ export default useAllData = (initData) => {
 
 
   // 设置
-  let setTopicData = function (topic) {
-    let topicData = getTopicData(rangeData, topic);
-    setData(topicData);
+  let setCategoryData = function (category) {
+    let categoryData = getCategoryData(rangeData, category);
+    setData(categoryData);
   }
 
-  let setSearchData = function (query, topic) {
-    let topicData = getTopicData(rangeData, topic);
-    let searchData = getSearchData(topicData, query);
+  let setSearchData = function (query, category) {
+    let categoryData = getCategoryData(rangeData, category);
+    let searchData = getSearchData(categoryData, query);
     setData(searchData);
   }
 
-  return [data, setTopicData, setSearchData];
+  return [data, setCategoryData, setSearchData];
 }
 
 

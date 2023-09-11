@@ -16,7 +16,7 @@ const Template = ({ data, currentPrompt, onChoosePrompt, isDelete, onDelete }) =
     setPage(0);
   })
 
-  emitter.once("onSelectTopic", () => {
+  emitter.once("onSelectCategory", () => {
     setPage(0);
   })
 
@@ -58,7 +58,7 @@ const Template = ({ data, currentPrompt, onChoosePrompt, isDelete, onDelete }) =
             }}
           >
             <div className="cardContent">
-              <h3>{substr(prompt.title, 50)}</h3>
+              <h3>{substr(prompt.prompt_title, 100)}</h3>
               {isDelete === true && (
                 <a className="delete" onClick={() => {
                   onDelete(prompt.id);
@@ -67,8 +67,8 @@ const Template = ({ data, currentPrompt, onChoosePrompt, isDelete, onDelete }) =
                 }}>x</a>
               )}
               <p>
-                <span className="icon icon_topic">{prompt.topic}</span>
-                <span className="icon icon_author">{[prompt.author]}</span>
+                <span className="icon icon_topic">{prompt.category}/{prompt.use_case}</span>
+                {/* <span className="icon icon_author">{[prompt.author]}</span> */}
                 {prompt.isUsed && (
                   <span className="icon icon_pin">used</span>
                 )}
@@ -76,11 +76,11 @@ const Template = ({ data, currentPrompt, onChoosePrompt, isDelete, onDelete }) =
               {/* <p>{keyword[prompt.topic]}</p> */}
               {/* <p></p> */}
               <div
-                title={prompt.content}
+                title={prompt.teaser}
                 className="multiLineEllipsis"
                 style={{ width: 'auto' }}
               >
-                {prompt.content}
+                {prompt.teaser}
               </div>
             </div>
           </div>

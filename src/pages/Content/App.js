@@ -54,8 +54,8 @@ const App = ({ onDel, onHide }) => {
         setIsShow(!isShow);
       }}></div>
       <div className={_className} style={{"height": getTemplateHeight() + "px"}}>
-        <h2 className="title">ChatGPT 提示词</h2>
-        <Public name="公共模板" currentPrompt={prompt} onSetPrompt={(prompt) => {
+        <h2 className="title">Prompt for ChatGPT</h2>
+        <Public name="Public" currentPrompt={prompt} onSetPrompt={(prompt) => {
             setPrompt(prompt);
             setAppPrompt(prompt);
             setPlaceHolder(prompt);

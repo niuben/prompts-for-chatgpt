@@ -3,26 +3,30 @@ import React, { useState } from 'react';
 import '@/style/Tool.scss';
 import Select from './Select.js';
 import emitter from "@/utils/emitter.js";
-import topicOptions from '@/data/topic.js';
+// import topicOptions from '@/data/topic.js';
+import {Category, UseCase} from '@/data/category.js';
+import {strArrToObjArr} from "@/utils/toSelect.js";
 
 
 let handle;
-let DropdownsAndInput = ({isSelect,  isSearch, onSelectTopic, onSearch }) => {
-  const [topic, setTopic] = useState('全部');
+let DropdownsAndInput = ({isSelect,  isSearch, onSelectCategory, onSearch }) => {
+  const [category, setCategory] = useState('All');
   const [query, setQuery] = useState('');
+
+  let categoryOption = strArrToObjArr(Category);
 
   return (
     <div className="toolbar">      
       {isSelect !== false && (
         <Select
           title="Category"
-          default={'全部'}
-          data = {topicOptions}
-          onChange={(topic) => {
-            console.log('topic', topic);
-            setTopic(topic);
-            onSelectTopic(topic);
-            emitter.emitEvent("onSelectTopic")
+          default={'All'}
+          data = {categoryOption}
+          onChange={(category) => {
+            // console.log('category', category);
+            setCategory(category);
+            onSelectCategory(category);
+            emitter.emitEvent("onSelectCategory")
             // setPage(0);
           }}
         />
@@ -51,7 +55,7 @@ let DropdownsAndInput = ({isSelect,  isSearch, onSelectTopic, onSearch }) => {
                 }
                 handle = setTimeout(() => {
                   setQuery(query);
-                  onSearch(query, topic);
+                  onSearch(query, category);
                   emitter.emitEvent("onSearch");
                   handle == undefined;
                 }, 150);

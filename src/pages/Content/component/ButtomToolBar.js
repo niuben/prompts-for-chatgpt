@@ -21,7 +21,7 @@ let ButtonToolBar = ({isSelect, prompt, onPromptDel, onSelect, onAction }) => {
     <div className="toolbar">            
       {
         (prompt!= null && prompt["id"] != -1) && <div className="prompts_tips mb10">        
-            {prompt.title}
+            {prompt.prompt_title}
             <div className='prompts_tips_close' onClick={()=>{
                 onPromptDel();
             }}></div>

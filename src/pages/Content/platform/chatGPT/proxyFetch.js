@@ -47,9 +47,8 @@ function proxyFetch() {
         // 提交prompt的id存到storage中;
         if (appPrompt != null) {
             var promptsID = getFromLocalStorage(PROMPTS_ID);
-            promptsID =  promptsID == null
-            ? [appPrompt.id]
-            : insertNumberToFront(appPrompt.id, promptsID);
+            promptsID =  promptsID == null ? [appPrompt.id] : insertNumberToFront(appPrompt.id, promptsID);
+            
             saveToLocalStorage(PROMPTS_ID, promptsID);
         }
 
@@ -75,9 +74,12 @@ function proxyFetch() {
 
             if(appPrompt != null){
                 // 如果有prompt字段（更新详细的描述），使用prompt字段;
-                content = appPrompt.prompt || appPrompt.content;            
+                content = appPrompt.prompt_template;            
                 // 将输入框内容替换提示词placeholder占位符;
-                content = content.replace(/\[placeholder\]/g, part);
+                let variables = appPrompt.variables;
+                let placeholder = `{{${variables[0].name}}}`;
+
+                content = content.replace(placeholder, part);
             }
 
             
@@ -86,7 +88,7 @@ function proxyFetch() {
 
             if(condition.Tone !== null && condition.Tone !== "Default" ) content += ` Please output the result in a ${condition.Tone} tone.`
 
-            if(condition.WriteStyle !== null && condition.WriteStyle !== "Default" ) content += ` Please output the result in a ${condition.WriteStyle} tone.`
+            if(condition.WriteStyle !== null && condition.WriteStyle !== "Default" ) content += ` Please output the result in a ${condition.WriteStyle} writing style.`
 
             message.content.parts[0] = content;
             

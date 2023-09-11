@@ -91,7 +91,7 @@ export function setPlaceHolder(prompt) {
 
     $(textareaEle).val("").attr(
         'placeholder',
-        prompt != null ? (prompt.placeholder || prompt.placeHolder) : 'Send a message.'
+        prompt != null ? prompt.variables[0].hint : 'Send a message.'
     );
     $(textareaEle).focus();
 };
