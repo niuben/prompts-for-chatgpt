@@ -54,7 +54,7 @@ const App = ({ onDel, onHide }) => {
         setIsShow(!isShow);
       }}></div>
       <div className={_className} style={{"height": getTemplateHeight() + "px"}}>
-        <h2 className="title">Prompt for ChatGPT</h2>
+        <h2 className="title">Prompts for ChatGPT</h2>
         <Public name="Public" currentPrompt={prompt} onSetPrompt={(prompt) => {
             setPrompt(prompt);
             setAppPrompt(prompt);
