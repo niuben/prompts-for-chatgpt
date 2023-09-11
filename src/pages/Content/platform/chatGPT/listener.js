@@ -1,5 +1,4 @@
 /* 监听chatGPT 输方法;  */ 
-
 import $ from "jquery";
 import emitter from "@/utils/emitter.js";
 import {getTemplateHeight} from "@/platform/chatGPT/page";
@@ -16,8 +15,6 @@ export function onSendMessage(callback){
             // callback && callback(e);
             emitter.emitEvent("onChat");
         }
-        
-
     });
 
     // 监听输入框右侧按钮，点击后触发回调函数;
@@ -36,7 +33,6 @@ $(window).on("load", function(){
     function handleResize() {
         // 获取新的窗口宽度和高度
         $(".mainInner").height(getTemplateHeight());
-
     }
 
     // 使用resize方法绑定窗口尺寸变化事件处理函数

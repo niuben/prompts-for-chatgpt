@@ -16,7 +16,6 @@ let ButtonToolBar = ({isSelect, prompt, onPromptDel, onSelect, onAction }) => {
     setChatStatus(true);
   });
   
-
   return (
     <div className="toolbar">            
       {

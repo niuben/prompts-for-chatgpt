@@ -81,8 +81,6 @@ function proxyFetch() {
 
                 content = content.replace(placeholder, part);
             }
-
-            
             
             if(condition.Language !== null) content += `Please output the result in ${condition.Language}.`
 
