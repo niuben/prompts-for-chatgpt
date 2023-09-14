@@ -50,9 +50,14 @@ body {
 }
 
 #prompt-textarea {
-  height: 34px !important;
-  line-height: 34px;
+  // height: 34px !important;
+  // line-height: 34px;
 }
+
+#promptsToolbar {
+  margin: 15px 15px 0px 15px;
+}
+
 
 .sidebarIcon {
   position: absolute;

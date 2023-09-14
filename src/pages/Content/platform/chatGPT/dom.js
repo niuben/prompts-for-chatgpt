@@ -75,7 +75,7 @@ export function hideChatGPT() {
 
 // 页面初始化时，隐藏一些无用元素
 export function hideElements(){    
-    $("form .grow").parent().hide();
+    $("form .grow").hide();
 
 }
 
