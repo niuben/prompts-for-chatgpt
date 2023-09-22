@@ -32,7 +32,7 @@
         "default.bundle.js"
       ],
       "matches": [
-        "https://*/*"
+        "https://chat.openai.com/*"
       ]
     }
   ]
