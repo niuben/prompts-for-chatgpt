@@ -51,7 +51,7 @@ function createApp() {
       
       setTimeout(() => {
         removeAddPromptBtn()
-        createAddPromptBtn();               
+        // createAddPromptBtn();               
       }, 1000);
     }
   
