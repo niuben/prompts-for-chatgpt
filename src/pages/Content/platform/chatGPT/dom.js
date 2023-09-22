@@ -4,17 +4,17 @@ export function getElements() {
     var mainEle = $('main.relative.h-full.w-full');
     return {
         mainEle: mainEle,
-        chatGPTInforEle: $("div.text-gray-800"),
+        // chatGPTInforEle: $("div.text-gray-800"),
         h1Ele: $("h1"),
-        contentEle: mainEle != null ? $(mainEle).find('div.flex.flex-col') : null,
-        chatGPTBtmEle: mainEle != null ? $(mainEle).find('.flex-shrink-0') : null,
-        editBtns: mainEle != null ? $(mainEle).find(".group.w-full").even().find("button.p-1.rounded-md") : null
+        // contentEle: mainEle != null ? $(mainEle).find('div.flex.flex-col') : null,
+        // chatGPTBtmEle: mainEle != null ? $(mainEle).find('.flex-shrink-0') : null,
+        // editBtns: mainEle != null ? $(mainEle).find(".group.w-full").even().find("button.p-1.rounded-md") : null
     }
 }
 
 // 创建prompts dom元素，用于模板渲染
 export function createPromptsEle() {
-    var { chatGPTBtmEle, h1Ele, mainEle } = getElements();
+    var {h1Ele, mainEle } = getElements();
     // $("<div id='chatGTP_prompts'></div>").insertAfter(h1Ele);
     $(mainEle).append("<div id='chatGTP_prompts'></div>");
     $(h1Ele).hide();
@@ -63,14 +63,14 @@ export function isHavePrompts() {
 
 // 展示首页 chatGPT information 
 export function showChatGPT() {
-    var { chatGPTInforEle } = getElements();
-    $(chatGPTInforEle).show();
+    // var { chatGPTInforEle } = getElements();
+    // $(chatGPTInforEle).show();
 }
 
 // 隐藏首页 chatGPT information
 export function hideChatGPT() {
-    var { chatGPTInforEle } = getElements();
-    $(chatGPTInforEle).hide();    
+    // var { chatGPTInforEle } = getElements();
+    // $(chatGPTInforEle).hide();    
 }
 
 // 页面初始化时，隐藏一些无用元素
